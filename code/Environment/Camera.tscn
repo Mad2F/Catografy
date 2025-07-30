@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://ighwgeo0gn3p"]
+[gd_scene load_steps=3 format=3 uid="uid://ighwgeo0gn3p"]
 
 [ext_resource type="Texture2D" uid="uid://byq2nxiim2rqq" path="res://assets/sprites/camera.png" id="1_qbsu8"]
 
-[node name="Camera" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbsu8"]
+size = Vector2(40, 37)
+
+[node name="Camera" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -24.5)
+shape = SubResource("RectangleShape2D_qbsu8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qbsu8")
