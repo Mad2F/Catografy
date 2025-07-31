@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5phb5ggyd2kt"]
+[gd_scene load_steps=10 format=3 uid="uid://c5phb5ggyd2kt"]
 
 [ext_resource type="Script" uid="uid://bd8gnp1bedk86" path="res://code/main.gd" id="1_q1u0r"]
 [ext_resource type="PackedScene" uid="uid://d360xf3bomed7" path="res://code/Environment/Room.tscn" id="1_qddiq"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://ctvvpqb6s0gcb" path="res://assets/sound/flash.ogg" id="6_3ooh7"]
 [ext_resource type="PackedScene" uid="uid://bfkt54bpb4vwc" path="res://code/Characters/Cat.tscn" id="7_rrqhy"]
 [ext_resource type="AudioStream" uid="uid://b8rgnr2blc0mu" path="res://assets/sound/Comic Game Loop - Mischief.mp3" id="8_m45iw"]
+[ext_resource type="PackedScene" uid="uid://c6qegowrybkuu" path="res://code/Environment/wall.tscn" id="9_8i2ub"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_q1u0r")
@@ -32,6 +33,21 @@ position = Vector2(142, 323)
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_m45iw")
 parameters/looping = true
+
+[node name="Wall" parent="." instance=ExtResource("9_8i2ub")]
+position = Vector2(510, 1618)
+
+[node name="Wall2" parent="." instance=ExtResource("9_8i2ub")]
+position = Vector2(2002, 402)
+rotation = -1.5708
+
+[node name="Wall3" parent="." instance=ExtResource("9_8i2ub")]
+position = Vector2(-820, 308)
+rotation = 1.5708
+
+[node name="Wall4" parent="." instance=ExtResource("9_8i2ub")]
+position = Vector2(523, -817)
+rotation = 3.14159
 
 [connection signal="last_photo_taken" from="Camera" to="." method="_on_camera_last_photo_taken"]
 [connection signal="photo_taken" from="Camera" to="." method="_on_camera_photo_taken"]

@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 class_name Cat
 
 #behaviors
@@ -7,15 +7,15 @@ var total_weight : float = sum_array(map.values())
 var zoomies_speed : float = 250
 var walking_speed : float = 50
 var picked_up : bool = false
+var direction : Vector2 = Vector2(0,0)
+var speed : float = 0
 
 #time related aspects
 var time : float = 0.
 var frequency = 3
 
 #signals
-signal move_cat(speed)
 signal hide_cat()
-signal stop_moving()
 signal picked(up)
 
 static func sum_array(array):
@@ -32,8 +32,10 @@ func choose():
 		if sseed <= cumulative_weight: # choose element
 			return behavior
 	
-func _process(delta):
+func _physics_process(delta: float) -> void:
 	time += delta
+	
+	#CHANGE BEHAVIOR EVERY 3 SECONDS IF NOT PICKED UP
 	if time > frequency:
 		time = 0
 		
@@ -41,26 +43,34 @@ func _process(delta):
 			var choice = choose()
 			get_node("animation").play(choice)
 			print(choice)
-		
-			if choice == "walking":
-				var new_speed = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized() * walking_speed
-				move_cat.emit(new_speed)
-			elif choice == "zoomies":
-				var new_speed = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized() * zoomies_speed
-				move_cat.emit(new_speed)
+			
+			if choice == "walking" or choice == "zoomies":
+				random_direction()
+				speed = walking_speed if choice == "walking" else zoomies_speed
 			elif choice == "hiding":
 				hide_cat.emit()
-				stop_moving.emit()
+				stop_moving()
 			else:
-				stop_moving.emit()
-
+				stop_moving()
+		
+	if (picked_up == false and speed > 0):
+		var collide = move_and_collide(direction * speed * delta)
+		if collide:
+			direction = direction.bounce(collide.get_normal())
+				
+func random_direction():
+	direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+	
+func stop_moving():
+	direction = Vector2(0,0)
+	speed = 0
 
 func _on_picked(up: Variant) -> void:
 	if (up != picked_up):
 		picked_up = up
 		if (picked_up):
 			get_node("animation").play("sitting")
-			stop_moving.emit()
+			stop_moving()
 			if !$PurrSound.is_playing():
 				$PurrSound.play()
 		else:
