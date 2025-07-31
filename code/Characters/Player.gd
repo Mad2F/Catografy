@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-@export var move_speed : float = 100
+@export var move_speed : float = 200
 @export var turn_speed : float = 10
 @onready var sprite : Sprite2D = $Sprite2D
 
