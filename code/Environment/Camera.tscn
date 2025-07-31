@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ighwgeo0gn3p"]
+[gd_scene load_steps=4 format=3 uid="uid://ighwgeo0gn3p"]
 
+[ext_resource type="Script" uid="uid://cdeyx1tvke8ae" path="res://code/Environment/Camera.gd" id="1_3o7cn"]
 [ext_resource type="Texture2D" uid="uid://byq2nxiim2rqq" path="res://assets/sprites/camera.png" id="1_qbsu8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbsu8"]
 size = Vector2(40, 37)
 
 [node name="Camera" type="StaticBody2D"]
+script = ExtResource("1_3o7cn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -24.5)
@@ -13,3 +15,8 @@ shape = SubResource("RectangleShape2D_qbsu8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qbsu8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

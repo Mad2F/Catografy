@@ -1,16 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5phb5ggyd2kt"]
+[gd_scene load_steps=6 format=3 uid="uid://c5phb5ggyd2kt"]
 
+[ext_resource type="Script" uid="uid://bd8gnp1bedk86" path="res://code/main.gd" id="1_q1u0r"]
 [ext_resource type="PackedScene" uid="uid://d360xf3bomed7" path="res://code/Environment/Room.tscn" id="1_qddiq"]
 [ext_resource type="PackedScene" uid="uid://bq03o58a1pc3" path="res://code/Characters/Player.tscn" id="2_kdg0e"]
 [ext_resource type="PackedScene" uid="uid://ighwgeo0gn3p" path="res://code/Environment/Camera.tscn" id="3_kdg0e"]
 [ext_resource type="PackedScene" uid="uid://b1xh3npa0fo5f" path="res://code/Characters/Animal.tscn" id="4_85am2"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_q1u0r")
 
 [node name="Room" parent="." instance=ExtResource("1_qddiq")]
 
 [node name="Player" parent="." instance=ExtResource("2_kdg0e")]
 position = Vector2(311, 219)
+move_speed = 100.0
+turn_speed = 10.0
 
 [node name="Camera" parent="." instance=ExtResource("3_kdg0e")]
 position = Vector2(394, 542)
