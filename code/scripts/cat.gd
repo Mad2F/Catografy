@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 		
 	if (picked_up == false and speed > 0):
 		var collide = move_and_collide(direction * speed * delta)
+		print(direction * speed)
 		if collide:
 			direction = direction.bounce(collide.get_normal())
 				

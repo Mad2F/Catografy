@@ -5,7 +5,7 @@ func _ready():
 	var cat = get_node("Cat")
 	cat.hide_cat.connect(_on_cat_hide_cat)
 	
-	$BackgroundMusic.play()
+	#$BackgroundMusic.play()
 
 
 func _on_camera_last_photo_taken():
@@ -20,13 +20,19 @@ func _captureSubjects():
 	# It could be fun to be able to move the camera also
 	# TODO : have a "PhotoSubject" Component where 2D Camera Sprite are loaded ?
 	#Placeholder : Capture Player for test purposes
+	if !$CameraSound.is_playing():
+		$CameraSound.play()
+		await get_tree().create_timer(2.0).timeout
 	if !$FlashSound.is_playing():
 		$FlashSound.play()
+		$flash_cone.show()
 	var PlayerSprite := Sprite2D.new()
 	PlayerSprite.texture = $Player.sprite.texture
 	PlayerSprite.position = _to_camera_scaled_coord($Player.position)
 	Global.photo1.clear()
 	Global.photo1.append(PlayerSprite)
+	await get_tree().create_timer(0.2).timeout
+	$flash_cone.hide()
 	
 
 func _showPhoto():
