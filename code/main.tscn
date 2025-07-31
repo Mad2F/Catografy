@@ -13,11 +13,11 @@ script = ExtResource("1_q1u0r")
 
 [node name="Player" parent="." instance=ExtResource("2_kdg0e")]
 position = Vector2(311, 219)
-move_speed = 100.0
-turn_speed = 10.0
 
 [node name="Camera" parent="." instance=ExtResource("3_kdg0e")]
 position = Vector2(394, 542)
 
 [node name="Animal" parent="." instance=ExtResource("4_85am2")]
 position = Vector2(459, 309)
+
+[connection signal="last_photo_taken" from="Camera" to="." method="_on_camera_last_photo_taken"]
