@@ -59,6 +59,8 @@ func _on_picked(up: Variant) -> void:
 	if (up != picked_up):
 		picked_up = up
 		if (picked_up):
+			get_node("animation").play("sitting")
+			stop_moving.emit()
 			if !$PurrSound.is_playing():
 				$PurrSound.play()
 		else:

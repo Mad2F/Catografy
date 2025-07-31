@@ -1,7 +1,15 @@
 extends Node
 
+#CAT ENVIRONMENT PROPERTIES
+var cat_velocity : Vector2 = Vector2(0,0)
+var cat_moving : bool = false
+
 func _ready():
 	$Camera.start_loop()
+	var cat = get_node("Cat")
+	cat.move_cat.connect(_on_cat_move_cat)
+	cat.stop_moving.connect(_on_cat_stop_moving)
+	cat.hide_cat.connect(_on_cat_hide_cat)
 
 
 func _on_camera_last_photo_taken():
@@ -46,3 +54,22 @@ func _to_camera_scaled_coord(input : Vector2):
 	var y = (yMax - input.y) / yMax
 	return Vector2(x, y)
 	
+
+#CAT LOGIC FOR MOVEMENT cannot be in Cat
+func _on_cat_move_cat(speed: Variant) -> void:
+	cat_velocity = speed
+	cat_moving = true
+
+
+func _on_cat_hide_cat() -> void:
+	pass # Replace with function body.
+
+
+func _process(delta):
+	if (cat_moving):
+		get_node("Cat").position += cat_velocity * delta
+
+
+func _on_cat_stop_moving() -> void:
+	cat_velocity = Vector2(0,0)
+	cat_moving = false
