@@ -19,12 +19,16 @@ func try_drop_or_pick():
 	if (_pickedItem != null):
 		print("DROP !")
 		_pickedItem = null
+		if !$PickupSound.is_playing():
+			$PickupSound.play()
 	else:
 		print("Try Pick")
 		for i in get_slide_collision_count():
 			var collider = get_slide_collision(i).get_collider()					
 			print("PICK !")
 			_pickedItem = collider
+			if !$PickupSound.is_playing():
+				$PickupSound.play()
 	# TODO : Check if Pickable Item close to us
 	# If yes, pick it and move it with us !
 	

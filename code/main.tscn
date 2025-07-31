@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5phb5ggyd2kt"]
+[gd_scene load_steps=7 format=3 uid="uid://c5phb5ggyd2kt"]
 
 [ext_resource type="Script" uid="uid://bd8gnp1bedk86" path="res://code/main.gd" id="1_q1u0r"]
 [ext_resource type="PackedScene" uid="uid://d360xf3bomed7" path="res://code/Environment/Room.tscn" id="1_qddiq"]
 [ext_resource type="PackedScene" uid="uid://bq03o58a1pc3" path="res://code/Characters/Player.tscn" id="2_kdg0e"]
 [ext_resource type="PackedScene" uid="uid://ighwgeo0gn3p" path="res://code/Environment/Camera.tscn" id="3_kdg0e"]
 [ext_resource type="PackedScene" uid="uid://b1xh3npa0fo5f" path="res://code/Characters/Animal.tscn" id="4_85am2"]
+[ext_resource type="AudioStream" uid="uid://ctvvpqb6s0gcb" path="res://assets/sound/flash.ogg" id="6_3ooh7"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_q1u0r")
@@ -19,6 +20,9 @@ position = Vector2(394, 542)
 
 [node name="Animal" parent="." instance=ExtResource("4_85am2")]
 position = Vector2(459, 309)
+
+[node name="FlashSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_3ooh7")
 
 [connection signal="last_photo_taken" from="Camera" to="." method="_on_camera_last_photo_taken"]
 [connection signal="photo_taken" from="Camera" to="." method="_on_camera_photo_taken"]

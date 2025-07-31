@@ -16,6 +16,8 @@ func _captureSubjects():
 	# It could be fun to be able to move the camera also
 	# TODO : have a "PhotoSubject" Component where 2D Camera Sprite are loaded ?
 	#Placeholder : Capture Player for test purposes
+	if !$FlashSound.is_playing():
+		$FlashSound.play()
 	var PlayerSprite := Sprite2D.new()
 	PlayerSprite.texture = $Player.sprite.texture
 	PlayerSprite.position = _to_camera_scaled_coord($Player.position)
