@@ -18,9 +18,13 @@ func try_drop_or_pick():
 	_lastMainAction = Time.get_ticks_msec()
 	if (_pickedItem != null):
 		print("DROP !")
+		print(_pickedItem)
+		if _pickedItem is Cat:
+			_pickedItem.picked.emit(false)
 		_pickedItem = null
 		if !$PickupSound.is_playing():
 			$PickupSound.play()
+	
 	else:
 		print("Try Pick")
 		for i in get_slide_collision_count():
@@ -29,6 +33,11 @@ func try_drop_or_pick():
 			_pickedItem = collider
 			if !$PickupSound.is_playing():
 				$PickupSound.play()
+			
+			if collider is Cat:
+				collider.picked.emit(true)
+				
+			print(collider)
 	# TODO : Check if Pickable Item close to us
 	# If yes, pick it and move it with us !
 	

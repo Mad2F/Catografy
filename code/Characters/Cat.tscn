@@ -1,7 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://bfkt54bpb4vwc"]
+[gd_scene load_steps=36 format=3 uid="uid://bfkt54bpb4vwc"]
 
 [ext_resource type="Script" uid="uid://v1yvi32sd641" path="res://code/scripts/cat.gd" id="1_r3dqq"]
 [ext_resource type="Texture2D" uid="uid://dt2knwyqcocaw" path="res://assets/image/Capture d’écran du 2025-07-30 22-24-38.png" id="2_8k3dk"]
+[ext_resource type="AudioStream" uid="uid://dk3v281sqt7k6" path="res://assets/sound/purr.ogg" id="3_qs807"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8k3dk"]
 
@@ -248,14 +249,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Cat" type="Node2D"]
+[node name="Cat" type="CharacterBody2D"]
 script = ExtResource("1_r3dqq")
 
-[node name="CharacterBody2D" type="AnimatableBody2D" parent="."]
+[node name="PurrSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qs807")
+parameters/looping = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8k3dk")
 
-[node name="animation" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qs807")
 animation = &"licking"
+
+[connection signal="picked" from="." to="." method="_on_picked"]
