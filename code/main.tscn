@@ -21,3 +21,4 @@ position = Vector2(394, 542)
 position = Vector2(459, 309)
 
 [connection signal="last_photo_taken" from="Camera" to="." method="_on_camera_last_photo_taken"]
+[connection signal="photo_taken" from="Camera" to="." method="_on_camera_photo_taken"]

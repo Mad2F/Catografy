@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var move_speed : float = 100
 @export var turn_speed : float = 10
+@onready var sprite : Sprite2D = $Sprite2D
 
 var _lastMainAction := 0 #to avoid spamming actions
 var _pickedItem : Node2D = null
