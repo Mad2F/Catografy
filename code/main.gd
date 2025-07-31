@@ -10,6 +10,8 @@ func _ready():
 	cat.move_cat.connect(_on_cat_move_cat)
 	cat.stop_moving.connect(_on_cat_stop_moving)
 	cat.hide_cat.connect(_on_cat_hide_cat)
+	
+	$BackgroundMusic.play()
 
 
 func _on_camera_last_photo_taken():
