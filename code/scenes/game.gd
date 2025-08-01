@@ -1,6 +1,8 @@
 extends Node
 class_name Game
 
+signal game_finished()
+
 func _ready():
 	$Camera.start_loop()
 	var window_size = get_viewport().get_window().size
@@ -9,7 +11,7 @@ func _ready():
 		child.position = Vector2(randf_range(0, window_size[0]), randf_range(0, window_size[1]))
 
 func _on_camera_last_photo_taken():
-	get_tree().change_scene_to_file("res://code/scenes/PhotosDisplay.tscn")
+	game_finished.emit()
 
 func _on_camera_photo_taken():
 	_captureSubjects()
