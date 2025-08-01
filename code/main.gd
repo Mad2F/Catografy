@@ -4,8 +4,6 @@ func _ready():
 	$Camera.start_loop()
 	#var cat = get_node("Cat")
 	#cat.hide_cat.connect(_on_cat_hide_cat)
-	
-	#$BackgroundMusic.play()
 
 
 func _on_camera_last_photo_taken():
@@ -27,17 +25,20 @@ func _captureSubjects():
 		$FlashSound.play()
 		$flash_cone.show()
 	
-	Global.photo1.clear()
-		
+	var current_items : Array[Sprite2D] = [] 
+		 
 	var PlayerSprite := _extractSprite($Player)
-	Global.photo1.append(PlayerSprite)
+	current_items.append(PlayerSprite)
 	 
 	var CatSprite := _extractSprite($Cat)
-	Global.photo1.append(CatSprite )
+	current_items.append(CatSprite )
 	 
 	for child in get_node("MiscItems").get_children():
 		var objSprite := _extractSprite(child)
-		Global.photo1.append(objSprite)
+		current_items.append(objSprite)
+	
+	Global.items_in_photos.append(current_items)
+	
 	await get_tree().create_timer(0.2).timeout
 	$flash_cone.hide()
 	

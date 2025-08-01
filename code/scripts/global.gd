@@ -1,3 +1,3 @@
 extends Node
 
-var photo1 : Array[Sprite2D] = []
+var items_in_photos : Array[ Array ] = []

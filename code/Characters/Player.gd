@@ -43,6 +43,6 @@ func try_drop_or_pick():
 							$PickupSound.play()				
 			print(collider)
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("main_action"):
 		try_drop_or_pick()

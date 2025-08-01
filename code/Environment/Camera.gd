@@ -8,7 +8,7 @@ signal last_photo_taken
 
 var _photosTaken = 0
 
-func _process(delta):
+func _process(_delta):
 	return
 	
 func start_loop():
