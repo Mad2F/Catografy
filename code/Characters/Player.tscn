@@ -8,6 +8,7 @@
 size = Vector2(42.5, 66)
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_11ihb")
 metadata/_custom_type_script = "uid://dunq0vkcu5nhs"
 

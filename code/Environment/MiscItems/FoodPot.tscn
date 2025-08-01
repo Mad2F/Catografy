@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dftgm"]
 size = Vector2(38, 32)
 
-[node name="Lamp" type="StaticBody2D"]
+[node name="FoodPot" type="StaticBody2D"]
+y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_indru")

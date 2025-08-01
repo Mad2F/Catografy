@@ -15,9 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://4n72o7pas5q5" path="res://code/Environment/MiscItems/Lamp.tscn" id="13_48wk2"]
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_q1u0r")
 
 [node name="Room" parent="." instance=ExtResource("1_qddiq")]
+y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_kdg0e")]
 position = Vector2(311, 219)
@@ -62,7 +64,8 @@ position = Vector2(641, 371)
 scale = Vector2(2.485, 2.485)
 texture = ExtResource("11_y5miu")
 
-[node name="MiscItems" type="Node" parent="."]
+[node name="MiscItems" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="FoodPot" parent="MiscItems" instance=ExtResource("11_n70af")]
 position = Vector2(90, 279)
