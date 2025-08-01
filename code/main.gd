@@ -2,8 +2,8 @@ extends Node
 
 func _ready():
 	$Camera.start_loop()
-	var cat = get_node("Cat")
-	cat.hide_cat.connect(_on_cat_hide_cat)
+	#var cat = get_node("Cat")
+	#cat.hide_cat.connect(_on_cat_hide_cat)
 	
 	#$BackgroundMusic.play()
 

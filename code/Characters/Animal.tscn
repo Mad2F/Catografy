@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1xh3npa0fo5f"]
+[gd_scene load_steps=5 format=3 uid="uid://b1xh3npa0fo5f"]
 
 [ext_resource type="Script" uid="uid://ggbne15b1fnr" path="res://code/Characters/Animal.gd" id="1_py8gj"]
+[ext_resource type="PackedScene" uid="uid://dbtqhbok2o52t" path="res://code/Composition/PickableItem.tscn" id="2_mgot4"]
 [ext_resource type="Texture2D" uid="uid://dni7bktlih3qh" path="res://assets/sprites/animals/cat_placeholder_white.png" id="2_ynms7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6n1fo"]
@@ -8,6 +9,8 @@ size = Vector2(29.5, 37.5)
 
 [node name="Animal" type="CharacterBody2D"]
 script = ExtResource("1_py8gj")
+
+[node name="Pickable" parent="." instance=ExtResource("2_mgot4")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ynms7")

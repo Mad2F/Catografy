@@ -1,6 +1,5 @@
+class_name PickableItem
 extends Node
-
-class_name  Pickable
 
 var _isPicked : bool = false
 

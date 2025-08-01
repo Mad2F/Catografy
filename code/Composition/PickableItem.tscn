@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbtqhbok2o52t"]
+
+[ext_resource type="Script" uid="uid://dgpimo618eick" path="res://code/Composition/PickableItem.gd" id="1_djhri"]
+
+[node name="Pickable" type="Node"]
+script = ExtResource("1_djhri")
+metadata/_custom_type_script = "uid://dgpimo618eick"

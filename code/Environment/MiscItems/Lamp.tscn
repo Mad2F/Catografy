@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://4n72o7pas5q5"]
+
+[ext_resource type="Texture2D" uid="uid://bhc4lqiro80k8" path="res://assets/sprites/misc/lamp_big.png" id="1_rqafa"]
+[ext_resource type="Script" uid="uid://dgpimo618eick" path="res://code/Composition/PickableItem.gd" id="2_0e6op"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dftgm"]
+size = Vector2(21, 126)
+
+[node name="Lamp" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rqafa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 53)
+shape = SubResource("RectangleShape2D_dftgm")
+
+[node name="PickableItem" type="Node" parent="."]
+script = ExtResource("2_0e6op")
+metadata/_custom_type_script = "uid://dgpimo618eick"

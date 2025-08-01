@@ -8,6 +8,8 @@ extends CharacterBody2D
 var _lastMainAction := 0 #to avoid spamming actions
 var _pickedItem : Node2D = null
 
+
+
 func _process(delta):
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * move_speed
 	if (_pickedItem != null):
@@ -28,18 +30,18 @@ func try_drop_or_pick():
 	else:
 		print("Try Pick")
 		for i in get_slide_collision_count():
-			var collider = get_slide_collision(i).get_collider()					
-			print("PICK !")
-			_pickedItem = collider
-			if !$PickupSound.is_playing():
-				$PickupSound.play()
-			
+			var collider = get_slide_collision(i).get_collider()
+			var nodeCollider : Node2D = collider
 			if collider is Cat:
 				collider.picked.emit(true)
-				
+			else:
+				for child in nodeCollider.get_children():
+					if child is PickableItem:							
+						print("PICK !")				
+						_pickedItem = collider
+						if !$PickupSound.is_playing():
+							$PickupSound.play()				
 			print(collider)
-	# TODO : Check if Pickable Item close to us
-	# If yes, pick it and move it with us !
 	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("main_action"):

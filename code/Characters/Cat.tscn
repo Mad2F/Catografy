@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://bfkt54bpb4vwc"]
+[gd_scene load_steps=37 format=3 uid="uid://bfkt54bpb4vwc"]
 
 [ext_resource type="Script" uid="uid://v1yvi32sd641" path="res://code/scripts/cat.gd" id="1_r3dqq"]
 [ext_resource type="Texture2D" uid="uid://dt2knwyqcocaw" path="res://assets/image/Capture d’écran du 2025-07-30 22-24-38.png" id="2_8k3dk"]
+[ext_resource type="PackedScene" uid="uid://dbtqhbok2o52t" path="res://code/Composition/PickableItem.tscn" id="2_pcr2h"]
 [ext_resource type="AudioStream" uid="uid://dk3v281sqt7k6" path="res://assets/sound/purr.ogg" id="3_qs807"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8k3dk"]
@@ -251,6 +252,8 @@ animations = [{
 
 [node name="Cat" type="CharacterBody2D"]
 script = ExtResource("1_r3dqq")
+
+[node name="Pickable" parent="." instance=ExtResource("2_pcr2h")]
 
 [node name="PurrSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qs807")

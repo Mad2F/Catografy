@@ -10,5 +10,3 @@ script = ExtResource("1_syunb")
 position = Vector2(225, 121)
 
 [connection signal="hide_cat" from="Cat" to="." method="_on_cat_hide_cat"]
-[connection signal="move_cat" from="Cat" to="." method="_on_cat_move_cat"]
-[connection signal="stop_moving" from="Cat" to="." method="_on_cat_stop_moving"]
