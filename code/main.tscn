@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5phb5ggyd2kt"]
+[gd_scene load_steps=15 format=3 uid="uid://c5phb5ggyd2kt"]
 
 [ext_resource type="Script" uid="uid://bd8gnp1bedk86" path="res://code/main.gd" id="1_q1u0r"]
 [ext_resource type="PackedScene" uid="uid://d360xf3bomed7" path="res://code/Environment/Room.tscn" id="1_qddiq"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dcob3cc0mqa7o" path="res://assets/image/flash_cone.png" id="11_y5miu"]
 [ext_resource type="PackedScene" uid="uid://cb3lka58w74iw" path="res://code/Environment/MiscItems/FlowerPot.tscn" id="12_3fuxk"]
 [ext_resource type="PackedScene" uid="uid://4n72o7pas5q5" path="res://code/Environment/MiscItems/Lamp.tscn" id="13_48wk2"]
+[ext_resource type="PackedScene" uid="uid://bfkt54bpb4vwc" path="res://code/Characters/Cat.tscn" id="14_3fuxk"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -28,7 +29,11 @@ position = Vector2(311, 219)
 position = Vector2(394, 542)
 
 [node name="Animal" parent="." instance=ExtResource("4_85am2")]
+visible = false
 position = Vector2(459, 309)
+
+[node name="Cat" parent="." instance=ExtResource("14_3fuxk")]
+position = Vector2(418, 360)
 
 [node name="FlashSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_3ooh7")

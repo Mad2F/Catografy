@@ -26,11 +26,18 @@ func _captureSubjects():
 	if !$FlashSound.is_playing():
 		$FlashSound.play()
 		$flash_cone.show()
-	var PlayerSprite := Sprite2D.new()
-	PlayerSprite.texture = $Player.sprite.texture
-	PlayerSprite.position = _to_camera_scaled_coord($Player.position)
+	
 	Global.photo1.clear()
+		
+	var PlayerSprite := _extractSprite($Player)
 	Global.photo1.append(PlayerSprite)
+	 
+	var CatSprite := _extractSprite($Cat)
+	Global.photo1.append(CatSprite )
+	 
+	for child in get_node("MiscItems").get_children():
+		var objSprite := _extractSprite(child)
+		Global.photo1.append(objSprite)
 	await get_tree().create_timer(0.2).timeout
 	$flash_cone.hide()
 	
@@ -38,6 +45,21 @@ func _captureSubjects():
 func _showPhoto():
 	# TODO : display the current photo taken on the bottom right of the screen for a few seconds
 	pass
+	
+#TODO ERWAN ne pas mettre get_child de 0 on veut récupérer le noeud de type Sprite2D
+func _extractSprite(node: Node) -> Sprite2D:
+	var sprite := Sprite2D.new()
+	var ref = node.get_child(0)
+	if (ref is Sprite2D):
+		sprite.texture = ref.texture
+	elif (ref is AnimatedSprite2D):
+		var frameIndex: int = ref.get_frame()
+		var animationName: String = ref.animation
+		var spriteFrames: SpriteFrames = ref.get_sprite_frames()
+		var currentTexture: Texture2D = spriteFrames.get_frame_texture(animationName, frameIndex)
+		sprite.texture = currentTexture	
+	sprite.position = _to_camera_scaled_coord(node.position)
+	return sprite
 
 # Return a vector (x,y) representing the position of the item in the FOV triangle of the camera
 # x = 0 : Full left in the camera FOV, x = 1 : Full Right in the camera FOV

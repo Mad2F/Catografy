@@ -5,8 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dbtqhbok2o52t" path="res://code/Composition/PickableItem.tscn" id="2_pcr2h"]
 [ext_resource type="AudioStream" uid="uid://dk3v281sqt7k6" path="res://assets/sound/purr.ogg" id="3_qs807"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8k3dk"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qs807"]
 atlas = ExtResource("2_8k3dk")
 region = Rect2(0, 56, 28, 28)
@@ -250,8 +248,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8k3dk"]
+
 [node name="Cat" type="CharacterBody2D"]
 script = ExtResource("1_r3dqq")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qs807")
+animation = &"licking"
 
 [node name="Pickable" parent="." instance=ExtResource("2_pcr2h")]
 
@@ -261,9 +265,5 @@ parameters/looping = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8k3dk")
-
-[node name="animation" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_qs807")
-animation = &"licking"
 
 [connection signal="picked" from="." to="." method="_on_picked"]

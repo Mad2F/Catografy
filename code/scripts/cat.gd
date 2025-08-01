@@ -40,8 +40,8 @@ func _physics_process(delta: float) -> void:
 		time = 0
 		
 		if (picked_up == false):
-			var choice = choose()
-			get_node("animation").play(choice)
+			var choice = choose( )
+			get_node("Sprite2D").play(choice)
 			print(choice)
 			
 			if choice == "walking" or choice == "zoomies":
@@ -55,7 +55,6 @@ func _physics_process(delta: float) -> void:
 		
 	if (picked_up == false and speed > 0):
 		var collide = move_and_collide(direction * speed * delta)
-		print(direction * speed)
 		if collide:
 			direction = direction.bounce(collide.get_normal())
 				
@@ -70,7 +69,7 @@ func _on_picked(up: Variant) -> void:
 	if (up != picked_up):
 		picked_up = up
 		if (picked_up):
-			get_node("animation").play("sitting")
+			get_node("Sprite2D").play("sitting")
 			stop_moving()
 			if !$PurrSound.is_playing():
 				$PurrSound.play()
