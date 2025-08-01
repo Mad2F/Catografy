@@ -8,9 +8,14 @@ signal last_photo_taken
 
 var _photosTaken = 0
 
+# TODO : A retirer avant de publier le jeu !!
 func _process(_delta):
-	return
-	
+	if Input.is_action_just_pressed("take_photo"):
+		_takePhoto()
+	elif Input.is_action_just_pressed("last_photo"):
+		_photosTaken = maxPhotos
+		_on_timer_timeout()
+
 func start_loop():
 	$Timer.start()
 	
