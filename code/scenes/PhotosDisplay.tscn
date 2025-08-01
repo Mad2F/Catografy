@@ -82,3 +82,74 @@ offset_left = 1043.0
 offset_top = 496.0
 offset_right = 1240.0
 offset_bottom = 697.0
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="label1" type="Label" parent="Labels"]
+offset_left = 1006.0
+offset_right = 1092.0
+offset_bottom = 32.0
+text = "Photo 1"
+
+[node name="label2" type="Label" parent="Labels"]
+offset_left = 136.0
+offset_top = 32.0
+offset_right = 222.0
+offset_bottom = 64.0
+text = "Photo 2"
+
+[node name="label3" type="Label" parent="Labels"]
+offset_left = 494.0
+offset_top = 4.0
+offset_right = 580.0
+offset_bottom = 36.0
+text = "Photo 3"
+
+[node name="label4" type="Label" parent="Labels"]
+offset_left = 695.0
+offset_top = 96.0
+offset_right = 781.0
+offset_bottom = 128.0
+text = "Photo 4"
+
+[node name="label5" type="Label" parent="Labels"]
+offset_left = 492.0
+offset_top = 392.0
+offset_right = 578.0
+offset_bottom = 424.0
+text = "Photo 5"
+
+[node name="label6" type="Label" parent="Labels"]
+offset_left = 119.0
+offset_top = 549.0
+offset_right = 205.0
+offset_bottom = 581.0
+text = "Photo 6"
+
+[node name="label7" type="Label" parent="Labels"]
+offset_left = 346.0
+offset_top = 422.0
+offset_right = 432.0
+offset_bottom = 454.0
+text = "Photo 7"
+
+[node name="label8" type="Label" parent="Labels"]
+offset_left = 620.0
+offset_top = 635.0
+offset_right = 706.0
+offset_bottom = 667.0
+text = "Photo 8"
+
+[node name="label9" type="Label" parent="Labels"]
+offset_left = 869.0
+offset_top = 478.0
+offset_right = 955.0
+offset_bottom = 510.0
+text = "Photo 9"
+
+[node name="label10" type="Label" parent="Labels"]
+offset_left = 1113.0
+offset_top = 476.0
+offset_right = 1199.0
+offset_bottom = 508.0
+text = "Photo 10"
