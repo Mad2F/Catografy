@@ -12,7 +12,8 @@ var _pickedItem : Node2D = null
 
 func _process(delta):
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * move_speed
-	if (_pickedItem != null):
+	if _pickedItem != null:
+		print("update cat " + " " + str(_pickedItem.position))
 		_pickedItem.global_position += velocity * delta
 	move_and_slide()
 		
@@ -33,6 +34,7 @@ func try_drop_or_pick():
 			var collider = get_slide_collision(i).get_collider()
 			var nodeCollider : Node2D = collider
 			if collider is Cat:
+				_pickedItem = collider
 				collider.picked.emit(true)
 			else:
 				for child in nodeCollider.get_children():
@@ -41,7 +43,6 @@ func try_drop_or_pick():
 						_pickedItem = collider
 						if !$PickupSound.is_playing():
 							$PickupSound.play()				
-			print(collider)
 	
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("main_action"):
