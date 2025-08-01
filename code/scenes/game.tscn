@@ -1,0 +1,116 @@
+[gd_scene load_steps=14 format=3 uid="uid://c5phb5ggyd2kt"]
+
+[ext_resource type="Script" uid="uid://bd8gnp1bedk86" path="res://code/scenes/game.gd" id="1_e67e6"]
+[ext_resource type="PackedScene" uid="uid://d360xf3bomed7" path="res://code/Environment/Room.tscn" id="2_i48lw"]
+[ext_resource type="PackedScene" uid="uid://bq03o58a1pc3" path="res://code/Characters/Player.tscn" id="3_pmdtt"]
+[ext_resource type="PackedScene" uid="uid://ighwgeo0gn3p" path="res://code/Environment/Camera.tscn" id="4_pf1ok"]
+[ext_resource type="PackedScene" uid="uid://b1xh3npa0fo5f" path="res://code/Characters/Animal.tscn" id="5_3soqb"]
+[ext_resource type="Texture2D" uid="uid://dcob3cc0mqa7o" path="res://assets/image/flash_cone.png" id="6_s55pg"]
+[ext_resource type="PackedScene" uid="uid://dmxx1jkmbvkn4" path="res://code/Environment/MiscItems/FoodPot.tscn" id="7_2liwv"]
+[ext_resource type="PackedScene" uid="uid://cb3lka58w74iw" path="res://code/Environment/MiscItems/FlowerPot.tscn" id="8_8lhlm"]
+[ext_resource type="PackedScene" uid="uid://4n72o7pas5q5" path="res://code/Environment/MiscItems/Lamp.tscn" id="9_7m0e1"]
+[ext_resource type="PackedScene" uid="uid://c6qegowrybkuu" path="res://code/Environment/wall.tscn" id="10_idifn"]
+[ext_resource type="AudioStream" uid="uid://ctvvpqb6s0gcb" path="res://assets/sound/flash.ogg" id="11_xw5jq"]
+[ext_resource type="AudioStream" uid="uid://b51u04fsbr0er" path="res://assets/sound/appareil.ogg" id="12_kqrdu"]
+[ext_resource type="PackedScene" uid="uid://bfkt54bpb4vwc" path="res://code/Characters/Cat.tscn" id="13_50xxw"]
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_e67e6")
+
+[node name="Room" parent="." instance=ExtResource("2_i48lw")]
+y_sort_enabled = true
+scale = Vector2(1.082, 0.901)
+
+[node name="Player" parent="." instance=ExtResource("3_pmdtt")]
+position = Vector2(311, 219)
+
+[node name="Camera" parent="." instance=ExtResource("4_pf1ok")]
+position = Vector2(394, 542)
+
+[node name="Animal" parent="." instance=ExtResource("5_3soqb")]
+visible = false
+position = Vector2(459, 309)
+
+[node name="flash_cone" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(641, 371)
+scale = Vector2(2.485, 2.485)
+texture = ExtResource("6_s55pg")
+
+[node name="MiscItems" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="FoodPot" parent="MiscItems" instance=ExtResource("7_2liwv")]
+position = Vector2(90, 279)
+
+[node name="FlowerPot" parent="MiscItems" instance=ExtResource("8_8lhlm")]
+position = Vector2(771, 35)
+
+[node name="Lamp2" parent="MiscItems" instance=ExtResource("9_7m0e1")]
+position = Vector2(206, 379)
+
+[node name="FlowerPot2" parent="MiscItems" instance=ExtResource("8_8lhlm")]
+position = Vector2(88, 51)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource("10_idifn")]
+position = Vector2(546, 1538)
+
+[node name="Wall2" parent="Walls" instance=ExtResource("10_idifn")]
+position = Vector2(2099, 393)
+rotation = -1.5708
+
+[node name="Wall3" parent="Walls" instance=ExtResource("10_idifn")]
+position = Vector2(-818, 308)
+rotation = 1.5708
+
+[node name="Wall4" parent="Walls" instance=ExtResource("10_idifn")]
+position = Vector2(524, -819)
+rotation = 3.14159
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="FlashSound" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource("11_xw5jq")
+volume_db = 20.0
+
+[node name="CameraSound" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource("12_kqrdu")
+volume_db = 20.0
+
+[node name="Cats" type="Node" parent="."]
+
+[node name="Cat" parent="Cats" instance=ExtResource("13_50xxw")]
+position = Vector2(418, 360)
+
+[node name="Cat2" parent="Cats" instance=ExtResource("13_50xxw")]
+position = Vector2(418, 360)
+
+[node name="Cat3" parent="Cats" instance=ExtResource("13_50xxw")]
+position = Vector2(418, 360)
+
+[node name="Cat4" parent="Cats" instance=ExtResource("13_50xxw")]
+position = Vector2(418, 360)
+
+[node name="Cat5" parent="Cats" instance=ExtResource("13_50xxw")]
+position = Vector2(418, 360)
+
+[node name="Cat6" parent="Cats" instance=ExtResource("13_50xxw")]
+position = Vector2(418, 360)
+
+[node name="Cat7" parent="Cats" instance=ExtResource("13_50xxw")]
+position = Vector2(418, 360)
+
+[node name="Cat8" parent="Cats" instance=ExtResource("13_50xxw")]
+position = Vector2(418, 360)
+
+[node name="Cat9" parent="Cats" instance=ExtResource("13_50xxw")]
+position = Vector2(418, 360)
+
+[node name="Cat10" parent="Cats" instance=ExtResource("13_50xxw")]
+position = Vector2(418, 360)
+
+[connection signal="last_photo_taken" from="Camera" to="." method="_on_camera_last_photo_taken"]
+[connection signal="photo_taken" from="Camera" to="." method="_on_camera_photo_taken"]

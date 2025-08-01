@@ -8,12 +8,9 @@ extends CharacterBody2D
 var _lastMainAction := 0 #to avoid spamming actions
 var _pickedItem : Node2D = null
 
-
-
 func _process(delta):
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * move_speed
 	if _pickedItem != null:
-		print("update cat " + " " + str(_pickedItem.position))
 		_pickedItem.global_position += velocity * delta
 	move_and_slide()
 		

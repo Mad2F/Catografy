@@ -255,7 +255,7 @@ script = ExtResource("1_r3dqq")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qs807")
-animation = &"licking"
+animation = &"standing"
 
 [node name="Pickable" parent="." instance=ExtResource("2_pcr2h")]
 

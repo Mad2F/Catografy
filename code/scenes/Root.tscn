@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkot0japeoxp5"]
+
+[ext_resource type="Script" uid="uid://b8jyq15oc7n3n" path="res://code/scripts/root.gd" id="1_6o5ss"]
+[ext_resource type="AudioStream" uid="uid://b8rgnr2blc0mu" path="res://assets/sound/Comic Game Loop - Mischief.mp3" id="1_j6xh0"]
+
+[node name="Root" type="Node2D"]
+script = ExtResource("1_6o5ss")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_j6xh0")
+volume_db = -4.643
+autoplay = true
+parameters/looping = true

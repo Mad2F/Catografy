@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Catografy"
-run/main_scene="uid://c5phb5ggyd2kt"
+run/main_scene="uid://dkot0japeoxp5"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

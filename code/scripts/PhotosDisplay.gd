@@ -5,7 +5,7 @@ extends Node
 @export var scaleClose : float = 1.
 @export var scaleFar : float = 0.7
 
-func printPhoto(size : Vector2, items : Array[Sprite2D], background : Sprite2D):
+func printPhoto(size : Vector2, items : Array[Sprite2D]):
 	#background.position = Vector2(0,0)
 	#add_child(background)
 	#Faire les maths pour recalculer la position des items proprement par rapport au x,y
@@ -20,24 +20,18 @@ func printPhoto(size : Vector2, items : Array[Sprite2D], background : Sprite2D):
 			item.position.x = item.position.x * size.x - 0.5 * size.x
 			item.position.y = (1 -item.position.y) * (yMax - yMin) * size.y - 0.5 * size.y
 			sub_items.append(item)
-		#else:
-			#print(str(item.texture.resource_path) + " at " + str(item.position.x) + ", " + str(item.position.x) + " hors champs")
-	return items
+	return sub_items
 
 func _ready():
-	var background := Sprite2D.new()
 	var i : int = 0
 	for items in Global.items_in_photos:
 		var ref_frame = get_node("Frames/"+str(i))
-		print("Index " + str(i) + str(ref_frame.position) + str(ref_frame.size))
-		
-		var new_items = printPhoto(ref_frame.size, items, background)
+		var new_items = printPhoto(ref_frame.size, items)
 		for item in new_items:
 			print(item.texture.resource_path + " " + str(item.position) + " > " + str(item.position + ref_frame.position))
 			item.position = item.position + ref_frame.position + 0.5 * ref_frame.size
 			item.z_index = 100
-			add_child(item)
-		
-		#ref_frame.hide()
+			add_child(item)		
+
 		i = i + 1
 		

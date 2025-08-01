@@ -1,155 +1,303 @@
-[gd_scene load_steps=5 format=3 uid="uid://2xcfg6hj2m6h"]
+[gd_scene load_steps=3 format=3 uid="uid://2xcfg6hj2m6h"]
 
 [ext_resource type="Script" uid="uid://dv1soycisatli" path="res://code/scripts/PhotosDisplay.gd" id="1_05g8l"]
-[ext_resource type="Texture2D" uid="uid://b3mcp67rh5qej" path="res://assets/image/photo_display_background.png" id="1_qx4vl"]
-[ext_resource type="Texture2D" uid="uid://dordurg02llil" path="res://assets/image/frame.png" id="2_1i2ws"]
-[ext_resource type="PackedScene" uid="uid://bh2r8dbgnkme8" path="res://code/Composition/PhotoPrinter.tscn" id="3_05g8l"]
+[ext_resource type="Texture2D" uid="uid://wgcswsdscang" path="res://assets/image/background.png" id="3_1i2ws"]
 
 [node name="PhotosDisplay" type="Node2D"]
 script = ExtResource("1_05g8l")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(2, 4)
-texture = ExtResource("1_qx4vl")
-centered = false
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1281.0
+offset_bottom = 723.0
+color = Color(5.10186e-06, 0.348683, 0.79833, 1)
 
-[node name="Frame" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(242.5, 477)
-scale = Vector2(0.525391, 0.5)
-texture = ExtResource("2_1i2ws")
+[node name="Backgrounds" type="Node" parent="."]
 
-[node name="PhotoPrinter" parent="Frame" instance=ExtResource("3_05g8l")]
+[node name="0" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(1105, 117)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("3_1i2ws")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="1" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(291, 166)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("3_1i2ws")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="2" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(670, 96)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_1i2ws")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="3" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(1053, 359)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_1i2ws")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="4" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(779, 261)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("3_1i2ws")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="5" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(144, 637)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_1i2ws")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="6" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(368, 638)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_1i2ws")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="7" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(356, 453)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("3_1i2ws")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="8" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(672, 488)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_1i2ws")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="9" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(1055, 570)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("3_1i2ws")
+region_rect = Rect2(0, 0, 842, 517)
 
 [node name="Frames" type="Node2D" parent="."]
+visible = false
 
 [node name="0" type="ColorRect" parent="Frames"]
-offset_left = 824.0
+offset_left = 953.0
 offset_top = 22.0
-offset_right = 1260.0
-offset_bottom = 478.0
+offset_right = 1795.0
+offset_bottom = 539.0
+scale = Vector2(0.36, 0.36)
 
 [node name="1" type="ColorRect" parent="Frames"]
-offset_left = 52.0
-offset_top = 59.0
-offset_right = 379.0
-offset_bottom = 352.0
+offset_left = 47.0
+offset_top = 32.0
+offset_right = 889.0
+offset_bottom = 549.0
+scale = Vector2(0.58, 0.58)
 
 [node name="2" type="ColorRect" parent="Frames"]
-offset_left = 416.0
+offset_left = 565.0
 offset_top = 31.0
-offset_right = 592.0
-offset_bottom = 189.0
+offset_right = 1407.0
+offset_bottom = 548.0
+scale = Vector2(0.25, 0.25)
 
 [node name="3" type="ColorRect" parent="Frames"]
-offset_left = 444.0
-offset_top = 238.0
-offset_right = 620.0
-offset_bottom = 396.0
+offset_left = 948.0
+offset_top = 294.0
+offset_right = 1790.0
+offset_bottom = 811.0
+scale = Vector2(0.25, 0.25)
 
 [node name="4" type="ColorRect" parent="Frames"]
-offset_left = 579.0
-offset_top = 120.0
-offset_right = 755.0
-offset_bottom = 278.0
+offset_left = 627.0
+offset_top = 168.0
+offset_right = 1469.0
+offset_bottom = 685.0
+scale = Vector2(0.36, 0.36)
 
 [node name="5" type="ColorRect" parent="Frames"]
-offset_left = 64.0
-offset_top = 383.0
-offset_right = 252.0
-offset_bottom = 547.0
+offset_left = 39.0
+offset_top = 572.0
+offset_right = 881.0
+offset_bottom = 1089.0
+scale = Vector2(0.25, 0.25)
 
 [node name="6" type="ColorRect" parent="Frames"]
-offset_left = 265.0
-offset_top = 449.0
-offset_right = 506.0
-offset_bottom = 701.0
+offset_left = 171.0
+offset_top = 339.0
+offset_right = 1013.0
+offset_bottom = 856.0
+scale = Vector2(0.44, 0.44)
 
 [node name="7" type="ColorRect" parent="Frames"]
-offset_left = 563.0
-offset_top = 415.0
-offset_right = 741.0
-offset_bottom = 632.0
+offset_left = 262.0
+offset_top = 574.0
+offset_right = 1104.0
+offset_bottom = 1091.0
+scale = Vector2(0.25, 0.25)
 
 [node name="8" type="ColorRect" parent="Frames"]
-offset_left = 801.0
-offset_top = 500.0
-offset_right = 998.0
-offset_bottom = 701.0
+offset_left = 547.0
+offset_top = 409.0
+offset_right = 1389.0
+offset_bottom = 926.0
+scale = Vector2(0.3, 0.3)
 
 [node name="9" type="ColorRect" parent="Frames"]
-offset_left = 1043.0
-offset_top = 496.0
-offset_right = 1240.0
-offset_bottom = 697.0
+offset_left = 853.0
+offset_top = 447.0
+offset_right = 1695.0
+offset_bottom = 964.0
+scale = Vector2(0.48, 0.48)
+
+[node name="Black_contour" type="Node2D" parent="."]
+
+[node name="0" type="ColorRect" parent="Black_contour"]
+offset_left = 919.0
+offset_top = 0.999999
+offset_right = 1761.0
+offset_bottom = 518.0
+scale = Vector2(0.43, 0.43)
+color = Color(0, 0, 0, 1)
+
+[node name="1" type="ColorRect" parent="Black_contour"]
+offset_left = 23.0
+offset_top = 2.0
+offset_right = 865.0
+offset_bottom = 519.0
+scale = Vector2(0.64, 0.64)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="2" type="ColorRect" parent="Black_contour"]
+offset_left = 542.0
+offset_top = 10.0
+offset_right = 1384.0
+offset_bottom = 527.0
+scale = Vector2(0.3, 0.3)
+color = Color(0, 0, 0, 1)
+
+[node name="3" type="ColorRect" parent="Black_contour"]
+offset_left = 932.0
+offset_top = 278.0
+offset_right = 1774.0
+offset_bottom = 795.0
+scale = Vector2(0.3, 0.3)
+color = Color(0, 0, 0, 1)
+
+[node name="4" type="ColorRect" parent="Black_contour"]
+offset_left = 600.0
+offset_top = 140.0
+offset_right = 1442.0
+offset_bottom = 657.0
+scale = Vector2(0.44, 0.44)
+color = Color(0, 0, 0, 1)
+
+[node name="5" type="ColorRect" parent="Black_contour"]
+offset_left = 18.0
+offset_top = 564.0
+offset_right = 860.0
+offset_bottom = 1081.0
+scale = Vector2(0.3, 0.3)
+color = Color(0, 0, 0, 1)
+
+[node name="6" type="ColorRect" parent="Black_contour"]
+offset_left = 140.0
+offset_top = 325.0
+offset_right = 982.0
+offset_bottom = 842.0
+scale = Vector2(0.5, 0.5)
+color = Color(0, 0, 0, 1)
+
+[node name="7" type="ColorRect" parent="Black_contour"]
+offset_left = 246.0
+offset_top = 566.0
+offset_right = 1088.0
+offset_bottom = 1083.0
+scale = Vector2(0.3, 0.3)
+color = Color(0, 0, 0, 1)
+
+[node name="8" type="ColorRect" parent="Black_contour"]
+offset_left = 514.0
+offset_top = 399.0
+offset_right = 1356.0
+offset_bottom = 916.0
+scale = Vector2(0.36, 0.36)
+color = Color(0, 0, 0, 1)
+
+[node name="9" type="ColorRect" parent="Black_contour"]
+offset_left = 823.0
+offset_top = 430.0
+offset_right = 1665.0
+offset_bottom = 947.0
+scale = Vector2(0.56, 0.56)
+color = Color(0, 0, 0, 1)
 
 [node name="Labels" type="Node" parent="."]
 
 [node name="label1" type="Label" parent="Labels"]
-offset_left = 1006.0
-offset_right = 1092.0
-offset_bottom = 32.0
+offset_left = 953.0
+offset_top = 3.0
+offset_right = 1039.0
+offset_bottom = 35.0
 text = "Photo 1"
 
 [node name="label2" type="Label" parent="Labels"]
-offset_left = 136.0
-offset_top = 32.0
-offset_right = 222.0
-offset_bottom = 64.0
+offset_left = 45.0
+offset_top = -3.0
+offset_right = 131.0
+offset_bottom = 29.0
 text = "Photo 2"
+metadata/_edit_use_anchors_ = true
 
 [node name="label3" type="Label" parent="Labels"]
-offset_left = 494.0
-offset_top = 4.0
-offset_right = 580.0
-offset_bottom = 36.0
+offset_left = 684.0
+offset_top = 7.0
+offset_right = 770.0
+offset_bottom = 39.0
 text = "Photo 3"
 
 [node name="label4" type="Label" parent="Labels"]
-offset_left = 695.0
-offset_top = 96.0
-offset_right = 781.0
-offset_bottom = 128.0
+offset_left = 1099.0
+offset_top = 275.0
+offset_right = 1185.0
+offset_bottom = 307.0
 text = "Photo 4"
 
 [node name="label5" type="Label" parent="Labels"]
-offset_left = 492.0
-offset_top = 392.0
-offset_right = 578.0
-offset_bottom = 424.0
+offset_left = 861.0
+offset_top = 143.0
+offset_right = 947.0
+offset_bottom = 175.0
 text = "Photo 5"
 
 [node name="label6" type="Label" parent="Labels"]
-offset_left = 119.0
-offset_top = 549.0
-offset_right = 205.0
-offset_bottom = 581.0
+offset_left = 186.0
+offset_top = 700.0
+offset_right = 272.0
+offset_bottom = 732.0
 text = "Photo 6"
 
 [node name="label7" type="Label" parent="Labels"]
-offset_left = 346.0
-offset_top = 422.0
-offset_right = 432.0
-offset_bottom = 454.0
+offset_left = 171.0
+offset_top = 318.0
+offset_right = 257.0
+offset_bottom = 350.0
 text = "Photo 7"
 
 [node name="label8" type="Label" parent="Labels"]
-offset_left = 620.0
-offset_top = 635.0
-offset_right = 706.0
-offset_bottom = 667.0
+offset_left = 412.0
+offset_top = 701.0
+offset_right = 498.0
+offset_bottom = 733.0
 text = "Photo 8"
 
 [node name="label9" type="Label" parent="Labels"]
-offset_left = 869.0
-offset_top = 478.0
-offset_right = 955.0
-offset_bottom = 510.0
+offset_left = 729.0
+offset_top = 564.0
+offset_right = 815.0
+offset_bottom = 596.0
 text = "Photo 9"
 
 [node name="label10" type="Label" parent="Labels"]
-offset_left = 1113.0
-offset_top = 476.0
-offset_right = 1199.0
-offset_bottom = 508.0
+offset_left = 1016.0
+offset_top = 692.0
+offset_right = 1102.0
+offset_bottom = 724.0
 text = "Photo 10"

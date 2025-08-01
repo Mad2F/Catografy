@@ -1,10 +1,12 @@
 extends Node
+class_name Game
 
 func _ready():
 	$Camera.start_loop()
-	#var cat = get_node("Cat")
-	#cat.hide_cat.connect(_on_cat_hide_cat)
-
+	var window_size = get_viewport().get_window().size
+	print(window_size)
+	for child in get_node("Cats").get_children():
+		child.position = Vector2(randf_range(0, window_size[0]), randf_range(0, window_size[1]))
 
 func _on_camera_last_photo_taken():
 	get_tree().change_scene_to_file("res://code/scenes/PhotosDisplay.tscn")
@@ -18,20 +20,21 @@ func _captureSubjects():
 	# It could be fun to be able to move the camera also
 	# TODO : have a "PhotoSubject" Component where 2D Camera Sprite are loaded ?
 	#Placeholder : Capture Player for test purposes
-	if !$CameraSound.is_playing():
-		$CameraSound.play()
+	if !$Sound/CameraSound.is_playing():
+		$Sound/CameraSound.play()
 		await get_tree().create_timer(2.0).timeout
-	if !$FlashSound.is_playing():
-		$FlashSound.play()
+	if !$Sound/FlashSound.is_playing():
+		$Sound/FlashSound.play()
 		$flash_cone.show()
 	
 	var current_items : Array[Sprite2D] = [] 
 		 
 	var PlayerSprite := _extractSprite($Player)
 	current_items.append(PlayerSprite)
-	 
-	var CatSprite := _extractSprite($Cat)
-	current_items.append(CatSprite )
+	
+	for cat in get_node("Cats").get_children():
+		var CatSprite := _extractSprite(cat)
+		current_items.append(CatSprite )
 	 
 	for child in get_node("MiscItems").get_children():
 		var objSprite := _extractSprite(child)
