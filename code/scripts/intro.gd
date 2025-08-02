@@ -5,6 +5,9 @@ signal skip
 
 func _ready():
 	await $initialTimer.timeout
+	slideshow()
+	
+func slideshow():
 	$First.show()
 	$timer.start()
 	await $timer.timeout
@@ -21,10 +24,13 @@ func _ready():
 	await $timer.timeout
 	$Fifth.show()
 	await $timer.timeout
-	
 	$Fifth.hide()
 	skip.emit()
 
 
 func _on_skip_pressed() -> void:
 	skip.emit()
+	
+func _process(_delta: float) -> void:
+	if Input.is_anything_pressed():
+		skip.emit()

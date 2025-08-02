@@ -84,10 +84,9 @@ theme_override_font_sizes/font_size = 36
 text = "SKIP"
 
 [node name="timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.5
 
 [node name="initialTimer" type="Timer" parent="."]
-wait_time = 3.0
 one_shot = true
 autostart = true
 
