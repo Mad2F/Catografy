@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c5phb5ggyd2kt"]
+[gd_scene load_steps=20 format=3 uid="uid://c5phb5ggyd2kt"]
 
 [ext_resource type="Script" uid="uid://bd8gnp1bedk86" path="res://code/scenes/game.gd" id="1_e67e6"]
 [ext_resource type="PackedScene" uid="uid://d360xf3bomed7" path="res://code/Environment/Room.tscn" id="2_i48lw"]
@@ -8,10 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://dmxx1jkmbvkn4" path="res://code/Environment/MiscItems/FoodPot.tscn" id="7_2liwv"]
 [ext_resource type="PackedScene" uid="uid://cb3lka58w74iw" path="res://code/Environment/MiscItems/FlowerPot.tscn" id="8_8lhlm"]
 [ext_resource type="PackedScene" uid="uid://4n72o7pas5q5" path="res://code/Environment/MiscItems/Lamp.tscn" id="9_7m0e1"]
+[ext_resource type="PackedScene" uid="uid://b0kkn7vkd5c70" path="res://code/Environment/MiscItems/Cactus.tscn" id="9_s5xrg"]
 [ext_resource type="PackedScene" uid="uid://c6qegowrybkuu" path="res://code/Environment/wall.tscn" id="10_idifn"]
+[ext_resource type="PackedScene" uid="uid://cp2dkalxv8pd0" path="res://code/Environment/MiscItems/ChairBack.tscn" id="10_n1h8g"]
+[ext_resource type="PackedScene" uid="uid://cdywofglmqocj" path="res://code/Environment/MiscItems/ChairFront.tscn" id="11_5bw47"]
 [ext_resource type="AudioStream" uid="uid://ctvvpqb6s0gcb" path="res://assets/sound/flash.ogg" id="11_xw5jq"]
+[ext_resource type="PackedScene" uid="uid://bls4d2xcc5ura" path="res://code/Environment/MiscItems/ChairRight.tscn" id="12_ilvw1"]
 [ext_resource type="AudioStream" uid="uid://b51u04fsbr0er" path="res://assets/sound/appareil.ogg" id="12_kqrdu"]
 [ext_resource type="PackedScene" uid="uid://bfkt54bpb4vwc" path="res://code/Characters/Cat.tscn" id="13_50xxw"]
+[ext_resource type="PackedScene" uid="uid://d2dhbicojiknb" path="res://code/Environment/MiscItems/ChairLeft.tscn" id="13_fvnqo"]
 [ext_resource type="Texture2D" uid="uid://cbsvyumf6c2jq" path="res://assets/image/Cartouche.png" id="14_cb2cc"]
 [ext_resource type="Texture2D" uid="uid://dgvoo2lvqs4h3" path="res://assets/image/transparent_photo_taken.png" id="15_t5exb"]
 
@@ -24,7 +29,7 @@ y_sort_enabled = true
 scale = Vector2(1.082, 0.901)
 
 [node name="Player" parent="." instance=ExtResource("3_pmdtt")]
-position = Vector2(311, 219)
+position = Vector2(384, 223)
 
 [node name="Camera" parent="." instance=ExtResource("4_pf1ok")]
 position = Vector2(666, 540)
@@ -39,16 +44,40 @@ texture = ExtResource("6_s55pg")
 y_sort_enabled = true
 
 [node name="FoodPot" parent="MiscItems" instance=ExtResource("7_2liwv")]
-position = Vector2(90, 279)
+position = Vector2(77, 296)
 
 [node name="FlowerPot" parent="MiscItems" instance=ExtResource("8_8lhlm")]
-position = Vector2(945, 127)
+position = Vector2(1255, 118)
 
 [node name="Lamp2" parent="MiscItems" instance=ExtResource("9_7m0e1")]
-position = Vector2(220, 404)
+position = Vector2(940, 52)
 
 [node name="FlowerPot2" parent="MiscItems" instance=ExtResource("8_8lhlm")]
-position = Vector2(471, 132)
+position = Vector2(34, 356)
+
+[node name="Cactus" parent="MiscItems" instance=ExtResource("9_s5xrg")]
+position = Vector2(376, 119)
+scale = Vector2(1, 1.5)
+
+[node name="ChairBack" parent="MiscItems" instance=ExtResource("10_n1h8g")]
+position = Vector2(137, 222)
+scale = Vector2(1.5, 1.5)
+
+[node name="ChairFront" parent="MiscItems" instance=ExtResource("11_5bw47")]
+position = Vector2(1192, 115)
+scale = Vector2(1.5, 1.5)
+
+[node name="ChairRight" parent="MiscItems" instance=ExtResource("12_ilvw1")]
+position = Vector2(253, 201)
+scale = Vector2(1.5, 1.5)
+
+[node name="ChairRight2" parent="MiscItems" instance=ExtResource("12_ilvw1")]
+position = Vector2(1240, 461)
+scale = Vector2(1.5, 1.5)
+
+[node name="ChairLeft" parent="MiscItems" instance=ExtResource("13_fvnqo")]
+position = Vector2(41, 492)
+scale = Vector2(1.5, 1.5)
 
 [node name="Walls" type="Node" parent="."]
 

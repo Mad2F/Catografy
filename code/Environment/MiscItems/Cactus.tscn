@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0kkn7vkd5c70"]
+
+[ext_resource type="Texture2D" uid="uid://c8jow010lca06" path="res://assets/sprites/misc/cactus.png" id="1_1lk3d"]
+[ext_resource type="Script" uid="uid://dgpimo618eick" path="res://code/Composition/PickableItem.gd" id="2_wgkic"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vcwj"]
+size = Vector2(38, 33)
+
+[node name="Cactus" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1lk3d")
+
+[node name="PickableItem" type="Node" parent="."]
+script = ExtResource("2_wgkic")
+metadata/_custom_type_script = "uid://dgpimo618eick"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 5)
+shape = SubResource("RectangleShape2D_5vcwj")

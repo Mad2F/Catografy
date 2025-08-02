@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bls4d2xcc5ura"]
+
+[ext_resource type="Texture2D" uid="uid://cn4hwilfdrsks" path="res://assets/sprites/misc/chair_right.png" id="1_trhxr"]
+[ext_resource type="Script" uid="uid://dgpimo618eick" path="res://code/Composition/PickableItem.gd" id="2_qfe84"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vcwj"]
+size = Vector2(34, 46)
+
+[node name="ChairRight" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_trhxr")
+
+[node name="PickableItem" type="Node" parent="."]
+script = ExtResource("2_qfe84")
+metadata/_custom_type_script = "uid://dgpimo618eick"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 7)
+shape = SubResource("RectangleShape2D_5vcwj")
