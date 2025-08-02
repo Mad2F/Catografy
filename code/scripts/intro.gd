@@ -8,9 +8,10 @@ var vnodes : Array[Node] = []
 var ispressed : bool = false
 
 func _ready():
-	await $initialTimer.timeout
 	index = 0
 	vnodes = [get_node("First"), get_node("Second"), get_node("Third"), get_node("Fourth"), get_node("Fifth")]
+	for n in vnodes:
+		n.hide()
 	next()
 	
 func next():

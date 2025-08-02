@@ -60,7 +60,6 @@ func _extractSprite(node: Node) -> Sprite2D:
 	var ref = node.get_child(0)
 	if (ref is Sprite2D):
 		sprite.texture = ref.texture
-		print(sprite.texture.resource_path)
 	elif (ref is AnimatedSprite2D):
 		var frameIndex: int = ref.get_frame()
 		var animationName: String = ref.animation
@@ -69,7 +68,6 @@ func _extractSprite(node: Node) -> Sprite2D:
 		sprite.modulate = ref.modulate
 		sprite.texture = currentTexture	
 	sprite.position = _to_camera_scaled_coord(node.position)
-	print(sprite.position)
 	return sprite
 
 # Return a vector (x,y) representing the position of the item in the FOV triangle of the camera

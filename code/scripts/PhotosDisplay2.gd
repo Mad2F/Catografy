@@ -44,7 +44,7 @@ func _ready():
 		var size = Vector2(sprite.texture.get_width() * sprite.scale.x, sprite.texture.get_height() * sprite.scale.y)
 		var new_items = printPhoto(size, items, sprite.scale.y)
 		for item in new_items:
-			item.position.y *= 1.2 #hack
+			#item.position.y *= 1.1 #hack
 			item.position += sprite.position + Vector2(-0.5 * size[0], -0.5 * size[1])
 			print(item.texture.resource_path)
 			print(size)

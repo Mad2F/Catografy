@@ -51,13 +51,13 @@ position = Vector2(1255, 118)
 
 [node name="Lamp2" parent="MiscItems" instance=ExtResource("9_7m0e1")]
 z_index = 1
-position = Vector2(799, 62)
+position = Vector2(950, 66)
 
 [node name="FlowerPot2" parent="MiscItems" instance=ExtResource("8_8lhlm")]
 position = Vector2(34, 356)
 
 [node name="Cactus" parent="MiscItems" instance=ExtResource("9_s5xrg")]
-position = Vector2(376, 119)
+position = Vector2(343, 150)
 scale = Vector2(1, 1.5)
 
 [node name="ChairBack" parent="MiscItems" instance=ExtResource("10_n1h8g")]
@@ -69,7 +69,7 @@ position = Vector2(1192, 115)
 scale = Vector2(1.5, 1.5)
 
 [node name="ChairRight" parent="MiscItems" instance=ExtResource("12_ilvw1")]
-position = Vector2(253, 201)
+position = Vector2(231, 212)
 scale = Vector2(1.5, 1.5)
 
 [node name="ChairRight2" parent="MiscItems" instance=ExtResource("12_ilvw1")]
