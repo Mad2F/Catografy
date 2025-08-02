@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://c5phb5ggyd2kt"]
+[gd_scene load_steps=15 format=3 uid="uid://c5phb5ggyd2kt"]
 
 [ext_resource type="Script" uid="uid://bd8gnp1bedk86" path="res://code/scenes/game.gd" id="1_e67e6"]
 [ext_resource type="PackedScene" uid="uid://d360xf3bomed7" path="res://code/Environment/Room.tscn" id="2_i48lw"]
 [ext_resource type="PackedScene" uid="uid://bq03o58a1pc3" path="res://code/Characters/Player.tscn" id="3_pmdtt"]
 [ext_resource type="PackedScene" uid="uid://ighwgeo0gn3p" path="res://code/Environment/Camera.tscn" id="4_pf1ok"]
-[ext_resource type="PackedScene" uid="uid://b1xh3npa0fo5f" path="res://code/Characters/Animal.tscn" id="5_3soqb"]
 [ext_resource type="Texture2D" uid="uid://dcob3cc0mqa7o" path="res://assets/image/flash_cone.png" id="6_s55pg"]
 [ext_resource type="PackedScene" uid="uid://dmxx1jkmbvkn4" path="res://code/Environment/MiscItems/FoodPot.tscn" id="7_2liwv"]
 [ext_resource type="PackedScene" uid="uid://cb3lka58w74iw" path="res://code/Environment/MiscItems/FlowerPot.tscn" id="8_8lhlm"]
@@ -28,15 +27,11 @@ scale = Vector2(1.082, 0.901)
 position = Vector2(311, 219)
 
 [node name="Camera" parent="." instance=ExtResource("4_pf1ok")]
-position = Vector2(394, 542)
-
-[node name="Animal" parent="." instance=ExtResource("5_3soqb")]
-visible = false
-position = Vector2(459, 309)
+position = Vector2(666, 540)
 
 [node name="flash_cone" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(619, 358)
+position = Vector2(888, 369)
 scale = Vector2(2.3, 2.3)
 texture = ExtResource("6_s55pg")
 
@@ -47,13 +42,13 @@ y_sort_enabled = true
 position = Vector2(90, 279)
 
 [node name="FlowerPot" parent="MiscItems" instance=ExtResource("8_8lhlm")]
-position = Vector2(771, 35)
+position = Vector2(945, 127)
 
 [node name="Lamp2" parent="MiscItems" instance=ExtResource("9_7m0e1")]
-position = Vector2(174, 436)
+position = Vector2(220, 404)
 
 [node name="FlowerPot2" parent="MiscItems" instance=ExtResource("8_8lhlm")]
-position = Vector2(88, 51)
+position = Vector2(471, 132)
 
 [node name="Walls" type="Node" parent="."]
 
