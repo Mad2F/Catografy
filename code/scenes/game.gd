@@ -2,6 +2,7 @@ extends Node
 class_name Game
 
 signal game_finished()
+var photoIndex: int = 0
 
 func _ready():
 	$Camera.start_loop()
@@ -47,6 +48,9 @@ func _captureSubjects():
 	
 	await get_tree().create_timer(0.2).timeout
 	$flash_cone.hide()
+	await get_tree().create_timer(1).timeout
+	get_node("Cartouche2/" + str(photoIndex)).show()
+	photoIndex += 1
 	$Camera.photo_ready.emit()
 	
 	

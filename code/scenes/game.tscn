@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5phb5ggyd2kt"]
+[gd_scene load_steps=16 format=3 uid="uid://c5phb5ggyd2kt"]
 
 [ext_resource type="Script" uid="uid://bd8gnp1bedk86" path="res://code/scenes/game.gd" id="1_e67e6"]
 [ext_resource type="PackedScene" uid="uid://d360xf3bomed7" path="res://code/Environment/Room.tscn" id="2_i48lw"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://ctvvpqb6s0gcb" path="res://assets/sound/flash.ogg" id="11_xw5jq"]
 [ext_resource type="AudioStream" uid="uid://b51u04fsbr0er" path="res://assets/sound/appareil.ogg" id="12_kqrdu"]
 [ext_resource type="PackedScene" uid="uid://bfkt54bpb4vwc" path="res://code/Characters/Cat.tscn" id="13_50xxw"]
+[ext_resource type="Texture2D" uid="uid://cbsvyumf6c2jq" path="res://assets/image/Cartouche.png" id="14_cb2cc"]
+[ext_resource type="Texture2D" uid="uid://dgvoo2lvqs4h3" path="res://assets/image/transparent_photo_taken.png" id="15_t5exb"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -56,7 +58,8 @@ position = Vector2(88, 51)
 [node name="Walls" type="Node" parent="."]
 
 [node name="Wall" parent="Walls" instance=ExtResource("10_idifn")]
-position = Vector2(546, 1538)
+visible = false
+position = Vector2(554, 1404)
 
 [node name="Wall2" parent="Walls" instance=ExtResource("10_idifn")]
 position = Vector2(2099, 393)
@@ -115,6 +118,73 @@ position = Vector2(418, 360)
 
 [node name="Cat10" parent="Cats" instance=ExtResource("13_50xxw")]
 position = Vector2(418, 360)
+
+[node name="Cartouche2" type="Node" parent="."]
+
+[node name="Cartouche" type="Sprite2D" parent="Cartouche2"]
+position = Vector2(640, 652)
+scale = Vector2(1.018, 1.132)
+texture = ExtResource("14_cb2cc")
+
+[node name="0" type="Sprite2D" parent="Cartouche2"]
+visible = false
+position = Vector2(1225, 648)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_t5exb")
+
+[node name="1" type="Sprite2D" parent="Cartouche2"]
+visible = false
+position = Vector2(1152, 648)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_t5exb")
+
+[node name="2" type="Sprite2D" parent="Cartouche2"]
+visible = false
+position = Vector2(1079, 648)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_t5exb")
+
+[node name="3" type="Sprite2D" parent="Cartouche2"]
+visible = false
+position = Vector2(1006, 648)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_t5exb")
+
+[node name="4" type="Sprite2D" parent="Cartouche2"]
+visible = false
+position = Vector2(932, 648)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_t5exb")
+
+[node name="5" type="Sprite2D" parent="Cartouche2"]
+visible = false
+position = Vector2(860, 648)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_t5exb")
+
+[node name="6" type="Sprite2D" parent="Cartouche2"]
+visible = false
+position = Vector2(787.73, 648.31)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_t5exb")
+
+[node name="7" type="Sprite2D" parent="Cartouche2"]
+visible = false
+position = Vector2(714.73, 648.31)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_t5exb")
+
+[node name="8" type="Sprite2D" parent="Cartouche2"]
+visible = false
+position = Vector2(640.73, 648.31)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_t5exb")
+
+[node name="9" type="Sprite2D" parent="Cartouche2"]
+visible = false
+position = Vector2(567, 647)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_t5exb")
 
 [connection signal="last_photo_taken" from="Camera" to="." method="_on_camera_last_photo_taken"]
 [connection signal="photo_ready" from="Camera" to="." method="_on_camera_photo_ready"]
