@@ -15,6 +15,7 @@ func _ready():
 	show_menu()
 	
 func show_menu():
+	Global.items_in_photos.clear()
 	deleteAllOtherScenesExcept("menu")
 	createScene("menu")
 	
@@ -54,6 +55,7 @@ func deleteAllOtherScenesExcept(scenename) -> void:
 		game.queue_free()
 	if end != null and scenename != "end":
 		remove_child(end)
+		end.back_menu.disconnect(show_menu)
 		end.queue_free()
 
 func createScene(scenename) -> void:
@@ -80,5 +82,6 @@ func createScene(scenename) -> void:
 		return
 	if end == null and scenename == "end":
 		end = end_scene.instantiate()
+		end.back_menu.connect(show_menu)
 		add_child(end)
 		return

@@ -5,6 +5,8 @@ extends Node
 @export var scaleClose : float = 5.
 @export var scaleFar : float = 0.5
 
+signal back_menu()
+
 func printPhoto(size : Vector2, items : Array[Sprite2D], parent_scale: float):
 	#background.position = Vector2(0,0)
 	#add_child(background)
@@ -57,3 +59,7 @@ func _ready():
 	
 	$Background.z_index = z_index + 1
 		
+
+
+func _on_back_pressed() -> void:
+	back_menu.emit()

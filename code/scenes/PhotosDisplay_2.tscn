@@ -85,6 +85,7 @@ texture = ExtResource("3_odabv")
 region_rect = Rect2(0, 0, 842, 517)
 
 [node name="BackgroundButton" type="ColorRect" parent="."]
+z_index = 800
 offset_left = 3.0
 offset_top = 5.0
 offset_right = 166.0
@@ -93,6 +94,7 @@ color = Color(0, 1, 1, 1)
 
 [node name="Back" type="Button" parent="."]
 self_modulate = Color(0.517647, 0.839216, 0.745098, 1)
+z_index = 800
 offset_left = 3.0
 offset_top = 5.0
 offset_right = 166.0
@@ -100,3 +102,5 @@ offset_bottom = 35.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 18
 text = "Back to main menu"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
