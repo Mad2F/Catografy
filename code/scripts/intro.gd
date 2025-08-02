@@ -22,6 +22,7 @@ func _ready():
 	await $timer.timeout
 	
 	$Fifth.hide()
+	skip.emit()
 
 
 func _on_skip_pressed() -> void:

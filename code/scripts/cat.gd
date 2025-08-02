@@ -31,6 +31,9 @@ func choose():
 		cumulative_weight += map[behavior] / total_weight
 		if sseed <= cumulative_weight: # choose element
 			return behavior
+			
+func _ready():
+	choose_animation()
 	
 func _physics_process(delta: float) -> void:
 	time += delta
@@ -40,18 +43,7 @@ func _physics_process(delta: float) -> void:
 		time = 0
 		
 		if (picked_up == false):
-			var choice = choose( )
-			get_node("Sprite2D").play(choice)
-			print(choice)
-			
-			if choice == "walking" or choice == "zoomies":
-				random_direction()
-				speed = walking_speed if choice == "walking" else zoomies_speed
-			elif choice == "hiding":
-				hide_cat.emit()
-				stop_moving()
-			else:
-				stop_moving()
+			choose_animation()
 		
 	if (picked_up == false and speed > 0):
 		var collide = move_and_collide(direction * speed * delta)
@@ -76,3 +68,17 @@ func _on_picked(up: Variant) -> void:
 		else:
 			if $PurrSound.is_playing():
 				$PurrSound.stop()
+				
+func choose_animation() -> void:
+	var choice = choose()
+	get_node("Sprite2D").play(choice)
+	print(choice)
+			
+	if choice == "walking" or choice == "zoomies":
+		random_direction()
+		speed = walking_speed if choice == "walking" else zoomies_speed
+	elif choice == "hiding":
+		hide_cat.emit()
+		stop_moving()
+	else:
+		stop_moving()

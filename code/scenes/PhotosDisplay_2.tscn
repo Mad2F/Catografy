@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://kddfp1sjlkb5"]
+
+[ext_resource type="Script" uid="uid://rofb8okg65n" path="res://code/scripts/PhotosDisplay2.gd" id="1_p3vum"]
+[ext_resource type="Texture2D" uid="uid://vc734yk6ctdh" path="res://assets/image/transparent_background.png" id="2_67256"]
+[ext_resource type="Texture2D" uid="uid://wgcswsdscang" path="res://assets/image/background.png" id="3_2k06i"]
+
+[node name="PhotosDisplay2" type="Node2D"]
+script = ExtResource("1_p3vum")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("2_67256")
+
+[node name="Backgrounds" type="Node" parent="."]
+
+[node name="0" type="Sprite2D" parent="Backgrounds"]
+z_index = 3
+position = Vector2(242.72, 177.97)
+scale = Vector2(0.459098, 0.452727)
+texture = ExtResource("3_2k06i")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="1" type="Sprite2D" parent="Backgrounds"]
+z_index = 3
+position = Vector2(596.41, 110.535)
+scale = Vector2(0.238931, 0.233907)
+texture = ExtResource("3_2k06i")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="2" type="Sprite2D" parent="Backgrounds"]
+z_index = 3
+position = Vector2(688.875, 267.188)
+scale = Vector2(0.202197, 0.200435)
+texture = ExtResource("3_2k06i")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="3" type="Sprite2D" parent="Backgrounds"]
+z_index = 3
+position = Vector2(1043.38, 177.688)
+scale = Vector2(0.457542, 0.457689)
+texture = ExtResource("3_2k06i")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="4" type="Sprite2D" parent="Backgrounds"]
+z_index = 3
+position = Vector2(119.72, 384.47)
+scale = Vector2(0.19544, 0.187737)
+texture = ExtResource("3_2k06i")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="5" type="Sprite2D" parent="Backgrounds"]
+z_index = 3
+position = Vector2(308.375, 383.688)
+scale = Vector2(0.193884, 0.194633)
+texture = ExtResource("3_2k06i")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="6" type="Sprite2D" parent="Backgrounds"]
+z_index = 3
+position = Vector2(536.375, 457.688)
+scale = Vector2(0.258017, 0.260397)
+texture = ExtResource("3_2k06i")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="7" type="Sprite2D" parent="Backgrounds"]
+z_index = 3
+position = Vector2(208.38, 589.63)
+scale = Vector2(0.383895, 0.380542)
+texture = ExtResource("3_2k06i")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="8" type="Sprite2D" parent="Backgrounds"]
+z_index = 3
+position = Vector2(537.35, 627.725)
+scale = Vector2(0.258076, 0.260251)
+texture = ExtResource("3_2k06i")
+region_rect = Rect2(0, 0, 842, 517)
+
+[node name="9" type="Sprite2D" parent="Backgrounds"]
+z_index = 3
+position = Vector2(972.46, 520.96)
+scale = Vector2(0.616485, 0.615242)
+texture = ExtResource("3_2k06i")
+region_rect = Rect2(0, 0, 842, 517)

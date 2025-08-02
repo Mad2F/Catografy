@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var maxPhotos : int = 2
+@export var maxPhotos : int = 10
 @export var fov : float = 120.
 
 signal photo_taken
@@ -24,12 +24,12 @@ func _takePhoto():
 	# et de générer la photo finale en fonction 
 	# une animation éventuellement
 	print("CHEESE !")
-	photo_taken.emit()
-
-func _on_timer_timeout():
-	if (_photosTaken < maxPhotos):
-		_takePhoto()
-		_photosTaken += 1
-	else:
+	_photosTaken += 1
+	if (_photosTaken <= maxPhotos):
+		photo_taken.emit()
+	if (_photosTaken >= maxPhotos):
 		last_photo_taken.emit()
 		$Timer.stop()
+
+func _on_timer_timeout():
+	_takePhoto()
