@@ -50,7 +50,8 @@ position = Vector2(77, 296)
 position = Vector2(1255, 118)
 
 [node name="Lamp2" parent="MiscItems" instance=ExtResource("9_7m0e1")]
-position = Vector2(940, 52)
+z_index = 1
+position = Vector2(799, 62)
 
 [node name="FlowerPot2" parent="MiscItems" instance=ExtResource("8_8lhlm")]
 position = Vector2(34, 356)
@@ -93,6 +94,7 @@ position = Vector2(-818, 308)
 rotation = 1.5708
 
 [node name="Wall4" parent="Walls" instance=ExtResource("10_idifn")]
+visible = false
 position = Vector2(587, -682)
 rotation = 3.14159
 
