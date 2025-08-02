@@ -4,8 +4,9 @@ class_name Intro
 signal skip
 
 func _ready():
-	await $timer.timeout
+	await $initialTimer.timeout
 	$First.show()
+	$timer.start()
 	await $timer.timeout
 	$First.hide()
 	$Second.show()

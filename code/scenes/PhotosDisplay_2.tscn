@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://wgcswsdscang" path="res://assets/image/background.png" id="3_2k06i"]
 
 [node name="PhotosDisplay2" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_p3vum")
 
 [node name="Background" type="Sprite2D" parent="."]

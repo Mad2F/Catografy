@@ -58,7 +58,6 @@ position = Vector2(88, 51)
 [node name="Walls" type="Node" parent="."]
 
 [node name="Wall" parent="Walls" instance=ExtResource("10_idifn")]
-visible = false
 position = Vector2(554, 1404)
 
 [node name="Wall2" parent="Walls" instance=ExtResource("10_idifn")]

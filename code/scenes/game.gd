@@ -8,7 +8,7 @@ func _ready():
 	$Camera.start_loop()
 	var window_size = get_viewport().get_window().size
 	for child in get_node("Cats").get_children():
-		child.position = Vector2(randf_range(350, window_size[0] - 80), randf_range(300, window_size[1] - 80))
+		child.position = Vector2(randf_range(350, window_size[0] - 80), randf_range(300, window_size[1] - 130))
 		var cat_sprite = child.get_child(0) as AnimatedSprite2D
 		if cat_sprite:
 			cat_sprite.modulate = Color(randf(), randf(), randf(), 1.0)
