@@ -9,6 +9,9 @@ func _ready():
 	print(window_size)
 	for child in get_node("Cats").get_children():
 		child.position = Vector2(randf_range(0, window_size[0]), randf_range(0, window_size[1]))
+		var cat_sprite = child.get_child(0) as AnimatedSprite2D
+		if cat_sprite:
+			cat_sprite.modulate = Color(randf(), randf(), randf(), 1.0)
 
 func _on_camera_last_photo_taken():
 	game_finished.emit()

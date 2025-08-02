@@ -34,6 +34,7 @@ func choose():
 			
 func _ready():
 	choose_animation()
+	time = 3 * randf()
 	
 func _physics_process(delta: float) -> void:
 	time += delta
@@ -72,7 +73,6 @@ func _on_picked(up: Variant) -> void:
 func choose_animation() -> void:
 	var choice = choose()
 	get_node("Sprite2D").play(choice)
-	print(choice)
 			
 	if choice == "walking" or choice == "zoomies":
 		random_direction()
