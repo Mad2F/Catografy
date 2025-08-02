@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnj0p34t2qp2d"]
+
+[ext_resource type="Texture2D" uid="uid://dgsdfvq8gepil" path="res://assets/image/Menu.png" id="1_0npk5"]
+[ext_resource type="Script" uid="uid://cylfb56jgrua5" path="res://code/scripts/menu.gd" id="1_mtew3"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_mtew3")
+
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(641, 363)
+texture = ExtResource("1_0npk5")
+
+[node name="Play" type="Button" parent="."]
+self_modulate = Color(0.518389, 0.837278, 0.745038, 1)
+offset_left = 193.0
+offset_top = 349.0
+offset_right = 497.0
+offset_bottom = 419.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "PLAY"
+
+[node name="Credits" type="Button" parent="."]
+self_modulate = Color(0.517647, 0.839216, 0.745098, 1)
+offset_left = 192.0
+offset_top = 443.0
+offset_right = 500.0
+offset_bottom = 513.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "CREDITS"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

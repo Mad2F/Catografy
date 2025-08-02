@@ -11,7 +11,7 @@ var _pickedItem : Node2D = null
 func _ready():
 	$Sprite2D.play("idle")
 	
-func _process(delta):
+func _process(_delta):
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * move_speed
 	if _pickedItem != null:
 		_pickedItem.global_position = global_position #+ Vector2(35, 0)

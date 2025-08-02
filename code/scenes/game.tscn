@@ -67,8 +67,12 @@ position = Vector2(-818, 308)
 rotation = 1.5708
 
 [node name="Wall4" parent="Walls" instance=ExtResource("10_idifn")]
-position = Vector2(524, -819)
+position = Vector2(587, -682)
 rotation = 3.14159
+
+[node name="Wall5" parent="Walls" instance=ExtResource("10_idifn")]
+position = Vector2(-389, -597)
+rotation = 0.872665
 
 [node name="Sound" type="Node" parent="."]
 

@@ -7,7 +7,7 @@ func _ready():
 	$Camera.start_loop()
 	var window_size = get_viewport().get_window().size
 	for child in get_node("Cats").get_children():
-		child.position = Vector2(randf_range(0, window_size[0]), randf_range(0, window_size[1]))
+		child.position = Vector2(randf_range(350, window_size[0] - 80), randf_range(300, window_size[1] - 80))
 		var cat_sprite = child.get_child(0) as AnimatedSprite2D
 		if cat_sprite:
 			cat_sprite.modulate = Color(randf(), randf(), randf(), 1.0)
@@ -73,7 +73,6 @@ func _extractSprite(node: Node) -> Sprite2D:
 func _to_camera_scaled_coord(input : Vector2):
 	if ($Camera.position.y == 0):
 		return Vector2(0,0)
-	var output := Vector2(0,0)
 	var yMax = $Camera.position.y
 	var maxDx = tan(rad_to_deg(0.5 * $Camera.fov)) * abs($Camera.position.y)
 	var localDx = input.y * maxDx / yMax
