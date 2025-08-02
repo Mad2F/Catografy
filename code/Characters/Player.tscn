@@ -1,8 +1,80 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq03o58a1pc3"]
+[gd_scene load_steps=7 format=3 uid="uid://bq03o58a1pc3"]
 
 [ext_resource type="Script" uid="uid://dunq0vkcu5nhs" path="res://code/Characters/Player.gd" id="1_11ihb"]
 [ext_resource type="Texture2D" uid="uid://lg6t614a003l" path="res://assets/sprites/player.png" id="2_c3xjo"]
+[ext_resource type="Texture2D" uid="uid://bivh6jm3h4l1l" path="res://assets/sprites/player_mirror.png" id="3_8xfqm"]
 [ext_resource type="AudioStream" uid="uid://cdsq6r61bdlq7" path="res://assets/sound/pickup.ogg" id="3_m1rf4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m1rf4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c3xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c3xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c3xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c3xjo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c3xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c3xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c3xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c3xjo")
+}],
+"loop": true,
+"name": &"idle_carrying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c3xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8xfqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c3xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8xfqm")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c3xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8xfqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c3xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8xfqm")
+}],
+"loop": true,
+"name": &"walking_carrying",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11ihb"]
 size = Vector2(42.5, 66)
@@ -12,8 +84,10 @@ y_sort_enabled = true
 script = ExtResource("1_11ihb")
 metadata/_custom_type_script = "uid://dunq0vkcu5nhs"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_c3xjo")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m1rf4")
+animation = &"idle"
+frame_progress = 0.6463
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.75, -1)

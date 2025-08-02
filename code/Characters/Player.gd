@@ -3,15 +3,27 @@ extends CharacterBody2D
 
 @export var move_speed : float = 200
 @export var turn_speed : float = 10
-@onready var sprite : Sprite2D = $Sprite2D
+@onready var sprite : AnimatedSprite2D = $Sprite2D
 
 var _lastMainAction := 0 #to avoid spamming actions
 var _pickedItem : Node2D = null
 
+func _ready():
+	$Sprite2D.play("idle")
+	
 func _process(delta):
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * move_speed
 	if _pickedItem != null:
-		_pickedItem.global_position += velocity * delta
+		_pickedItem.global_position = global_position + Vector2(35, 0)
+	if (velocity[0] != 0 or velocity[1] != 0) and _pickedItem != null:
+		$Sprite2D.play("walking_carrying")
+	if  (velocity[0] != 0 or velocity[1] != 0) and _pickedItem == null:
+		$Sprite2D.play("walking")
+	if (velocity[0] == 0 and velocity[1] == 0)  and _pickedItem != null:
+		$Sprite2D.play("idle_carrying")
+	if (velocity[0] == 0 and velocity[1] == 0)  and _pickedItem == null:
+		$Sprite2D.play("idle")
+		
 	move_and_slide()
 		
 func try_drop_or_pick():
