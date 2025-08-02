@@ -1,9 +1,15 @@
-[gd_scene load_steps=37 format=3 uid="uid://bfkt54bpb4vwc"]
+[gd_scene load_steps=33 format=3 uid="uid://bfkt54bpb4vwc"]
 
 [ext_resource type="Script" uid="uid://v1yvi32sd641" path="res://code/scripts/cat.gd" id="1_r3dqq"]
 [ext_resource type="Texture2D" uid="uid://dt2knwyqcocaw" path="res://assets/image/Capture d’écran du 2025-07-30 22-24-38.png" id="2_8k3dk"]
 [ext_resource type="PackedScene" uid="uid://dbtqhbok2o52t" path="res://code/Composition/PickableItem.tscn" id="2_pcr2h"]
+[ext_resource type="Texture2D" uid="uid://cnxjvv2jq0tof" path="res://assets/sprites/animals/cat/cat_licking1.png" id="3_k37jo"]
 [ext_resource type="AudioStream" uid="uid://dk3v281sqt7k6" path="res://assets/sound/purr.ogg" id="3_qs807"]
+[ext_resource type="Texture2D" uid="uid://bvgl3i4a0qtni" path="res://assets/sprites/animals/cat/cat_idle1.png" id="3_r3cfe"]
+[ext_resource type="Texture2D" uid="uid://wfltp33v5ux" path="res://assets/sprites/animals/cat/cat_licking2.png" id="4_0j6o6"]
+[ext_resource type="Texture2D" uid="uid://dnci6biebh77" path="res://assets/sprites/animals/cat/cat_idle2.png" id="4_keea7"]
+[ext_resource type="Texture2D" uid="uid://brjdersgq171k" path="res://assets/sprites/animals/cat/cat_idle3.png" id="5_k37jo"]
+[ext_resource type="Texture2D" uid="uid://bo06tsequmj68" path="res://assets/sprites/animals/cat/cat_idle4.png" id="6_0j6o6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qs807"]
 atlas = ExtResource("2_8k3dk")
@@ -24,46 +30,6 @@ region = Rect2(84, 56, 28, 28)
 [sub_resource type="AtlasTexture" id="AtlasTexture_k3euy"]
 atlas = ExtResource("2_8k3dk")
 region = Rect2(112, 56, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_svjav"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(0, 0, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3d3t4"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(28, 0, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tm3g1"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(56, 0, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k6bao"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(84, 0, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n8rmd"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(112, 0, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p0h7l"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(0, 84, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_325dk"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(28, 84, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hwv42"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(56, 84, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_js5dy"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(84, 84, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2sho5"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(112, 84, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ha77g"]
 atlas = ExtResource("2_8k3dk")
@@ -148,44 +114,32 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_svjav")
+"duration": 0.2,
+"texture": ExtResource("3_k37jo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3d3t4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tm3g1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k6bao")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n8rmd")
+"texture": ExtResource("4_0j6o6")
 }],
 "loop": true,
 "name": &"licking",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p0h7l")
+"duration": 2.0,
+"texture": ExtResource("3_r3cfe")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_325dk")
+"duration": 0.4,
+"texture": ExtResource("4_keea7")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hwv42")
+"duration": 2.5,
+"texture": ExtResource("5_k37jo")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_js5dy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2sho5")
+"duration": 0.2,
+"texture": ExtResource("6_0j6o6")
 }],
 "loop": true,
 "name": &"sitting",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -255,7 +209,8 @@ script = ExtResource("1_r3dqq")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qs807")
-animation = &"standing"
+animation = &"licking"
+frame_progress = 0.481282
 
 [node name="Pickable" parent="." instance=ExtResource("2_pcr2h")]
 
