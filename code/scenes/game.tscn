@@ -113,4 +113,5 @@ position = Vector2(418, 360)
 position = Vector2(418, 360)
 
 [connection signal="last_photo_taken" from="Camera" to="." method="_on_camera_last_photo_taken"]
+[connection signal="photo_ready" from="Camera" to="." method="_on_camera_photo_ready"]
 [connection signal="photo_taken" from="Camera" to="." method="_on_camera_photo_taken"]

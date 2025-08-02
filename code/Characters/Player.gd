@@ -32,7 +32,6 @@ func try_drop_or_pick():
 		drop()
 	
 	else:
-		print("Try Pick")
 		for i in get_slide_collision_count():
 			var collider = get_slide_collision(i).get_collider()								
 			pick_up(collider)			

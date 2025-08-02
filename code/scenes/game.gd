@@ -6,7 +6,6 @@ signal game_finished()
 func _ready():
 	$Camera.start_loop()
 	var window_size = get_viewport().get_window().size
-	print(window_size)
 	for child in get_node("Cats").get_children():
 		child.position = Vector2(randf_range(0, window_size[0]), randf_range(0, window_size[1]))
 		var cat_sprite = child.get_child(0) as AnimatedSprite2D
@@ -18,7 +17,6 @@ func _on_camera_last_photo_taken():
 
 func _on_camera_photo_taken():
 	_captureSubjects()
-	_showPhoto()
 
 func _captureSubjects():
 	# TODO : Check for all children (inclunding player) if they are in the field of view of the camera
@@ -49,11 +47,8 @@ func _captureSubjects():
 	
 	await get_tree().create_timer(0.2).timeout
 	$flash_cone.hide()
+	$Camera.photo_ready.emit()
 	
-
-func _showPhoto():
-	# TODO : display the current photo taken on the bottom right of the screen for a few seconds
-	pass
 	
 #TODO ERWAN ne pas mettre get_child de 0 on veut récupérer le noeud de type Sprite2D
 func _extractSprite(node: Node) -> Sprite2D:
@@ -87,8 +82,3 @@ func _to_camera_scaled_coord(input : Vector2):
 	var x = (input.x - xLocalMin) / (xLocalMax - xLocalMin)	
 	var y = (yMax - input.y) / yMax
 	return Vector2(x, y)
-	
-
-#CAT LOGIC FOR HIDING
-func _on_cat_hide_cat() -> void:
-	pass # Replace with function body.
