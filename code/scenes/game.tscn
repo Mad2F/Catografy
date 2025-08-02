@@ -146,7 +146,7 @@ position = Vector2(418, 360)
 
 [node name="Cartouche" type="Sprite2D" parent="Cartouche2"]
 position = Vector2(640, 652)
-scale = Vector2(1.018, 1.132)
+scale = Vector2(1, 1.112)
 texture = ExtResource("14_cb2cc")
 
 [node name="0" type="Sprite2D" parent="Cartouche2"]
