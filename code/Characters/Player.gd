@@ -14,7 +14,7 @@ func _ready():
 func _process(delta):
 	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * move_speed
 	if _pickedItem != null:
-		_pickedItem.global_position = global_position + Vector2(35, 0)
+		_pickedItem.global_position = global_position #+ Vector2(35, 0)
 	if (velocity[0] != 0 or velocity[1] != 0) and _pickedItem != null:
 		$Sprite2D.play("walking_carrying")
 	if  (velocity[0] != 0 or velocity[1] != 0) and _pickedItem == null:
@@ -29,30 +29,56 @@ func _process(delta):
 func try_drop_or_pick():
 	_lastMainAction = Time.get_ticks_msec()
 	if (_pickedItem != null):
-		print("DROP !")
-		print(_pickedItem)
-		if _pickedItem is Cat:
-			_pickedItem.picked.emit(false)
-		_pickedItem = null
-		if !$PickupSound.is_playing():
-			$PickupSound.play()
+		drop()
 	
 	else:
 		print("Try Pick")
 		for i in get_slide_collision_count():
-			var collider = get_slide_collision(i).get_collider()
-			var nodeCollider : Node2D = collider
-			if collider is Cat:
-				_pickedItem = collider
-				collider.picked.emit(true)
-			else:
-				for child in nodeCollider.get_children():
-					if child is PickableItem:							
-						print("PICK !")				
-						_pickedItem = collider
-						if !$PickupSound.is_playing():
-							$PickupSound.play()				
+			var collider = get_slide_collision(i).get_collider()								
+			pick_up(collider)			
 	
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("main_action"):
 		try_drop_or_pick()
+
+func pick_up(collider):
+	var isCat = (collider is Cat)
+		
+	var hasPickableItemAsChild = false
+	var nodeCollider : Node2D = collider
+	if nodeCollider:
+		for child in nodeCollider.get_children():
+			if child is PickableItem:									
+				hasPickableItemAsChild = true
+	
+	if not isCat and not hasPickableItemAsChild:
+		#you can pick up any item that is not a cat or or do not have a PickableItem
+		print(isCat, hasPickableItemAsChild, collider)
+		return
+	
+	_pickedItem = collider
+		
+	for child in _pickedItem.get_children():
+		if child is CollisionShape2D:
+			child.disabled = true
+	
+	if collider is Cat:
+		collider.picked.emit(true)
+	else:
+		if !$PickupSound.is_playing():
+			$PickupSound.play()	
+
+func drop():
+	if _pickedItem:
+		for child in _pickedItem.get_children():
+			if child is CollisionShape2D:
+				child.disabled = false
+		
+		if _pickedItem is Cat:
+			_pickedItem.picked.emit(false)
+		else:
+			if !$PickupSound.is_playing():
+				$PickupSound.play()	
+				
+		_pickedItem.position.x += 35
+		_pickedItem = null

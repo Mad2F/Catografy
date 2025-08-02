@@ -66,6 +66,7 @@ func _extractSprite(node: Node) -> Sprite2D:
 		var animationName: String = ref.animation
 		var spriteFrames: SpriteFrames = ref.get_sprite_frames()
 		var currentTexture: Texture2D = spriteFrames.get_frame_texture(animationName, frameIndex)
+		sprite.modulate = ref.modulate
 		sprite.texture = currentTexture	
 	sprite.position = _to_camera_scaled_coord(node.position)
 	return sprite
