@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Cat
 
 #behaviors
-var map = {"hiding": 10, "licking": 10, "sitting": 40, "standing": 30, "walking":40, "zoomies":25}
+var map = {"licking": 10, "sitting": 40, "standing": 30, "walking":40, "zoomies":25}
 var total_weight : float = sum_array(map.values())
 var zoomies_speed : float = 250
 var walking_speed : float = 50

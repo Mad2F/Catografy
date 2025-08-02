@@ -1,7 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://bfkt54bpb4vwc"]
+[gd_scene load_steps=20 format=3 uid="uid://bfkt54bpb4vwc"]
 
 [ext_resource type="Script" uid="uid://v1yvi32sd641" path="res://code/scripts/cat.gd" id="1_r3dqq"]
-[ext_resource type="Texture2D" uid="uid://dt2knwyqcocaw" path="res://assets/image/Capture d’écran du 2025-07-30 22-24-38.png" id="2_8k3dk"]
 [ext_resource type="PackedScene" uid="uid://dbtqhbok2o52t" path="res://code/Composition/PickableItem.tscn" id="2_pcr2h"]
 [ext_resource type="Texture2D" uid="uid://cnxjvv2jq0tof" path="res://assets/sprites/animals/cat/cat_licking1.png" id="3_k37jo"]
 [ext_resource type="AudioStream" uid="uid://dk3v281sqt7k6" path="res://assets/sound/purr.ogg" id="3_qs807"]
@@ -16,69 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://cw87rpi56wh8k" path="res://assets/sprites/animals/cat/cat_standing4.png" id="12_ujotq"]
 [ext_resource type="Texture2D" uid="uid://bvjwnnlacaop0" path="res://assets/sprites/animals/cat/cat_walking1.png" id="13_as75c"]
 [ext_resource type="Texture2D" uid="uid://b3ykgelgx6hc" path="res://assets/sprites/animals/cat/cat_walking2.png" id="14_ujotq"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qs807"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(0, 56, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yfwst"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(28, 56, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ck7tw"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(56, 56, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o72jx"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(84, 56, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k3euy"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(112, 56, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4tt4b"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(0, 56, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qwduw"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(28, 56, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xmrek"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(56, 56, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c1d8t"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(84, 56, 28, 28)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_unlk3"]
-atlas = ExtResource("2_8k3dk")
-region = Rect2(112, 56, 28, 28)
+[ext_resource type="Texture2D" uid="uid://h7mannpstswn" path="res://assets/sprites/animals/cat/cat_zoomies1.png" id="15_ppbc7"]
+[ext_resource type="Texture2D" uid="uid://bydvf6xy20qno" path="res://assets/sprites/animals/cat/cat_zoomies2.png" id="16_heaer"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qs807"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qs807")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yfwst")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ck7tw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o72jx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k3euy")
-}],
-"loop": true,
-"name": &"hiding",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 0.2,
 "texture": ExtResource("3_k37jo")
@@ -137,19 +78,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4tt4b")
+"texture": ExtResource("15_ppbc7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qwduw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xmrek")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c1d8t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_unlk3")
+"texture": ExtResource("16_heaer")
 }],
 "loop": true,
 "name": &"zoomies",
@@ -163,8 +95,7 @@ script = ExtResource("1_r3dqq")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qs807")
-animation = &"standing"
-frame_progress = 0.487343
+animation = &"licking"
 
 [node name="Pickable" parent="." instance=ExtResource("2_pcr2h")]
 
