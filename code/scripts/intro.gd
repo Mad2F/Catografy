@@ -1,22 +1,28 @@
 extends Node2D
 class_name Intro
 
+signal skip
+
 func _ready():
-	await get_tree().create_timer(3.0).timeout
+	await $timer.timeout
 	$First.show()
-	await get_tree().create_timer(3.0).timeout
+	await $timer.timeout
 	$First.hide()
 	$Second.show()
-	await get_tree().create_timer(3.0).timeout
+	await $timer.timeout
 	$Second.hide()
-	$Third.show()
-	await get_tree().create_timer(3.0).timeout
+	$Third.show()  
+	await $timer.timeout
 	$Third.hide()
 	$Fourth.show()
-	await get_tree().create_timer(3.0).timeout
+	await $timer.timeout
 	$Fourth.hide()
-	await get_tree().create_timer(3.0).timeout
+	await $timer.timeout
 	$Fifth.show()
-	await get_tree().create_timer(3.0).timeout
+	await $timer.timeout
 	
 	$Fifth.hide()
+
+
+func _on_skip_pressed() -> void:
+	skip.emit()

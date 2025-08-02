@@ -57,3 +57,27 @@ offset_right = 957.0
 offset_bottom = 329.0
 theme_override_font_sizes/font_size = 50
 text = "Wait... Where are the cats?"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 1068.0
+offset_top = 493.0
+offset_right = 1273.0
+offset_bottom = 565.0
+color = Color(0.819608, 0.752941, 0.658824, 1)
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(0.819608, 0.752941, 0.658824, 1)
+offset_left = 1169.0
+offset_top = 635.0
+offset_right = 1260.0
+offset_bottom = 705.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "SKIP"
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="pressed" from="Button" to="." method="_on_skip_pressed"]
