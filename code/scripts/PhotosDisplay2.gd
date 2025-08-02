@@ -1,7 +1,7 @@
 extends Node
 
 @export var yMin : float = 0
-@export var yMax : float = 0.6
+@export var yMax : float = 0.55
 @export var scaleClose : float = 1.
 @export var scaleFar : float = 0.7
 

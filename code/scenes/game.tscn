@@ -36,8 +36,8 @@ position = Vector2(459, 309)
 
 [node name="flash_cone" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(641, 371)
-scale = Vector2(2.485, 2.485)
+position = Vector2(619, 358)
+scale = Vector2(2.3, 2.3)
 texture = ExtResource("6_s55pg")
 
 [node name="MiscItems" type="Node2D" parent="."]
@@ -50,7 +50,7 @@ position = Vector2(90, 279)
 position = Vector2(771, 35)
 
 [node name="Lamp2" parent="MiscItems" instance=ExtResource("9_7m0e1")]
-position = Vector2(206, 379)
+position = Vector2(174, 436)
 
 [node name="FlowerPot2" parent="MiscItems" instance=ExtResource("8_8lhlm")]
 position = Vector2(88, 51)
