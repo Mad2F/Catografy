@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://d360xf3bomed7"]
+[gd_scene load_steps=23 format=4 uid="uid://d360xf3bomed7"]
 
 [ext_resource type="Script" uid="uid://cykk7en52usxf" path="res://code/Environment/Room.gd" id="1_ghy2t"]
 [ext_resource type="Texture2D" uid="uid://b0jgme2ldoxn4" path="res://assets/tiles/floor_placeholder.png" id="2_dgujg"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://82as2cqfxrem" path="res://assets/tiles/wall4.png" id="7_c8vv7"]
 [ext_resource type="Texture2D" uid="uid://bx81cwfxpesh5" path="res://assets/tiles/wall5.png" id="8_1csrg"]
 [ext_resource type="Texture2D" uid="uid://en10f15jf62f" path="res://assets/tiles/wall6.png" id="9_h78kl"]
+[ext_resource type="Texture2D" uid="uid://cov3l701ppxc6" path="res://assets/sprites/misc/table.png" id="11_npiuq"]
+[ext_resource type="Texture2D" uid="uid://dq25w1b0sm2bn" path="res://assets/sprites/misc/couch.png" id="12_p3kdg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6l85"]
 texture = ExtResource("2_dgujg")
@@ -79,6 +81,9 @@ sources/5 = SubResource("TileSetAtlasSource_64v6g")
 sources/6 = SubResource("TileSetAtlasSource_s7nca")
 sources/7 = SubResource("TileSetAtlasSource_666k2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8vv7"]
+size = Vector2(253.506, 116.39)
+
 [node name="Room" type="Node2D"]
 script = ExtResource("1_ghy2t")
 
@@ -93,3 +98,25 @@ tile_set = SubResource("TileSet_qt3yw")
 [node name="Rug" type="Sprite2D" parent="."]
 position = Vector2(583, 320)
 texture = ExtResource("4_f6l85")
+
+[node name="Table" type="Sprite2D" parent="."]
+modulate = Color(0.96284, 0.958997, 0.961479, 1)
+position = Vector2(188, 223)
+texture = ExtResource("11_npiuq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Table"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Table/StaticBody2D"]
+position = Vector2(0, -4)
+polygon = PackedVector2Array(106, -55, -8, 43, -105, 39, -115, 11, -1, -103, 117, -103, 113, -72)
+
+[node name="Couch" type="Sprite2D" parent="."]
+position = Vector2(658, 90)
+scale = Vector2(1.20313, 1.20313)
+texture = ExtResource("12_p3kdg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Couch"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Couch/StaticBody2D"]
+position = Vector2(-3.7403, 9.96105)
+shape = SubResource("RectangleShape2D_c8vv7")
