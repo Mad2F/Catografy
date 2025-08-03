@@ -48,3 +48,7 @@ func _ready():
 
 func _on_back_pressed() -> void:
 	back_menu.emit()
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("main_action"):
+		back_menu.emit()

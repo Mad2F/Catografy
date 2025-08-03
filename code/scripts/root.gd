@@ -5,11 +5,13 @@ var credits_scene = preload("res://code/scenes/Credits.tscn")
 var intro_scene = preload("res://code/scenes/Intro.tscn")
 var game_scene = preload("res://code/scenes/game.tscn")
 var end_scene = preload("res://code/scenes/PhotosDisplay_2.tscn")
+var ty_scene = preload("res://code/scenes/ThankYou.tscn")
 var intro
 var game
 var end
 var menu
 var credits
+var ty
 
 func _ready():
 	show_menu()
@@ -35,6 +37,10 @@ func ending():
 	deleteAllOtherScenesExcept("end")
 	createScene("end")
 
+func show_ty():
+	deleteAllOtherScenesExcept("ty")
+	createScene("ty")
+
 func deleteAllOtherScenesExcept(scenename) -> void:
 	if credits != null and scenename != "credits":
 		remove_child(credits)
@@ -55,8 +61,12 @@ func deleteAllOtherScenesExcept(scenename) -> void:
 		game.queue_free()
 	if end != null and scenename != "end":
 		remove_child(end)
-		end.back_menu.disconnect(show_menu)
+		end.back_menu.disconnect(show_ty)
 		end.queue_free()
+	if ty != null and scenename != "ty":
+		remove_child(ty)
+		ty.back.disconnect(show_menu)
+		ty.queue_free()
 
 func createScene(scenename) -> void:
 	if credits == null and scenename == "credits":
@@ -82,6 +92,11 @@ func createScene(scenename) -> void:
 		return
 	if end == null and scenename == "end":
 		end = end_scene.instantiate()
-		end.back_menu.connect(show_menu)
+		end.back_menu.connect(show_ty)
 		add_child(end)
+		return
+	if ty == null and scenename == "ty":
+		ty = ty_scene.instantiate()
+		ty.back.connect(show_menu)
+		add_child(ty)
 		return

@@ -93,3 +93,4 @@ shape = SubResource("RectangleShape2D_11ihb")
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_m1rf4")
+volume_db = 17.642
