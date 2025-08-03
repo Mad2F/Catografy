@@ -4,6 +4,7 @@ extends Node
 @export var yMax : float = 1
 @export var scaleClose : float = 5.
 @export var scaleFar : float = 0.5
+var time = 0
 
 signal back_menu()
 
@@ -49,6 +50,7 @@ func _ready():
 func _on_back_pressed() -> void:
 	back_menu.emit()
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("main_action"):
+func _process(delta: float) -> void:
+	time += delta
+	if Input.is_action_just_pressed("main_action") and time > 3:
 		back_menu.emit()
