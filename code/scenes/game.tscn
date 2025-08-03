@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5phb5ggyd2kt"]
+[gd_scene load_steps=22 format=3 uid="uid://c5phb5ggyd2kt"]
 
 [ext_resource type="Script" uid="uid://bd8gnp1bedk86" path="res://code/scenes/game.gd" id="1_e67e6"]
 [ext_resource type="PackedScene" uid="uid://d360xf3bomed7" path="res://code/Environment/Room.tscn" id="2_i48lw"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bfkt54bpb4vwc" path="res://code/Characters/Cat.tscn" id="13_50xxw"]
 [ext_resource type="PackedScene" uid="uid://d2dhbicojiknb" path="res://code/Environment/MiscItems/ChairLeft.tscn" id="13_fvnqo"]
 [ext_resource type="Texture2D" uid="uid://cbsvyumf6c2jq" path="res://assets/image/Cartouche.png" id="14_cb2cc"]
+[ext_resource type="PackedScene" uid="uid://bfl42md7nu0an" path="res://code/Environment/MiscItems/FlowerPot2.tscn" id="15_5bw47"]
 [ext_resource type="Texture2D" uid="uid://dgvoo2lvqs4h3" path="res://assets/image/transparent_photo_taken.png" id="15_t5exb"]
 
 [node name="Main" type="Node2D"]
@@ -53,12 +54,16 @@ y_sort_enabled = true
 [node name="FoodPot" parent="MiscItems" instance=ExtResource("7_2liwv")]
 position = Vector2(77, 296)
 
-[node name="FlowerPot" parent="MiscItems" instance=ExtResource("8_8lhlm")]
-position = Vector2(1255, 118)
+[node name="FoodPot2" parent="MiscItems" instance=ExtResource("7_2liwv")]
+position = Vector2(1165, 414)
 
 [node name="Lamp2" parent="MiscItems" instance=ExtResource("9_7m0e1")]
 z_index = 1
 position = Vector2(950, 66)
+
+[node name="Lamp3" parent="MiscItems" instance=ExtResource("9_7m0e1")]
+z_index = 1
+position = Vector2(1257, 458)
 
 [node name="FlowerPot2" parent="MiscItems" instance=ExtResource("8_8lhlm")]
 position = Vector2(34, 356)
@@ -80,12 +85,15 @@ position = Vector2(231, 212)
 scale = Vector2(1.5, 1.5)
 
 [node name="ChairRight2" parent="MiscItems" instance=ExtResource("12_ilvw1")]
-position = Vector2(1240, 461)
+position = Vector2(1238, 272)
 scale = Vector2(1.5, 1.5)
 
 [node name="ChairLeft" parent="MiscItems" instance=ExtResource("13_fvnqo")]
 position = Vector2(41, 492)
 scale = Vector2(1.5, 1.5)
+
+[node name="FlowerPot3" parent="MiscItems" instance=ExtResource("15_5bw47")]
+position = Vector2(1252, 120)
 
 [node name="Walls" type="Node" parent="."]
 

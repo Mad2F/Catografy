@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfl42md7nu0an"]
+
+[ext_resource type="Texture2D" uid="uid://cgckigyig5at5" path="res://assets/sprites/misc/plant_dry_1.png" id="1_4gcbl"]
+[ext_resource type="Script" uid="uid://dgpimo618eick" path="res://code/Composition/PickableItem.gd" id="2_pv4jk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vcwj"]
+size = Vector2(38, 33)
+
+[node name="FlowerPot2" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4gcbl")
+
+[node name="PickableItem" type="Node" parent="."]
+script = ExtResource("2_pv4jk")
+metadata/_custom_type_script = "uid://dgpimo618eick"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 37.5)
+shape = SubResource("RectangleShape2D_5vcwj")

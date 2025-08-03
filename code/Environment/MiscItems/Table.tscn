@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm1fgw8hrv2rm"]
+
+[ext_resource type="Texture2D" uid="uid://cov3l701ppxc6" path="res://assets/sprites/misc/table.png" id="1_6jm7i"]
+[ext_resource type="Script" uid="uid://dgpimo618eick" path="res://code/Composition/PickableItem.gd" id="2_wgj5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dftgm"]
+size = Vector2(121, 43)
+
+[node name="Table" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(36.5, 20)
+scale = Vector2(0.542969, 0.289063)
+texture = ExtResource("1_6jm7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(40.5, 14.5)
+shape = SubResource("RectangleShape2D_dftgm")
+
+[node name="PickableItem" type="Node" parent="."]
+script = ExtResource("2_wgj5e")
+metadata/_custom_type_script = "uid://dgpimo618eick"
