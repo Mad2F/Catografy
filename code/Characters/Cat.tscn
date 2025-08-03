@@ -102,6 +102,7 @@ animation = &"licking"
 [node name="PurrSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qs807")
 volume_db = 5.0
+playback_type = 1
 parameters/looping = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
