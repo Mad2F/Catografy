@@ -59,6 +59,17 @@ offset_bottom = 329.0
 theme_override_font_sizes/font_size = 50
 text = "Wait... Where are the cats?"
 
+[node name="Sixth" type="Label" parent="."]
+visible = false
+offset_left = 273.0
+offset_top = 234.0
+offset_right = 1032.0
+offset_bottom = 420.0
+theme_override_font_sizes/font_size = 50
+text = "Use Arrow Keys to move.
+Press Space to Pick up the cats.
+Bring them in front of the camera !"
+
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 offset_left = 1068.0

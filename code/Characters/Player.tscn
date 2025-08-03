@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bq03o58a1pc3"]
+[gd_scene load_steps=11 format=3 uid="uid://bq03o58a1pc3"]
 
 [ext_resource type="Script" uid="uid://dunq0vkcu5nhs" path="res://code/Characters/Player.gd" id="1_11ihb"]
 [ext_resource type="Texture2D" uid="uid://lg6t614a003l" path="res://assets/sprites/player.png" id="2_c3xjo"]
 [ext_resource type="Texture2D" uid="uid://bivh6jm3h4l1l" path="res://assets/sprites/player_mirror.png" id="3_8xfqm"]
+[ext_resource type="Texture2D" uid="uid://pgr5aqtp4cq" path="res://assets/sprites/player_carry1.png" id="3_a5ws5"]
 [ext_resource type="AudioStream" uid="uid://cdsq6r61bdlq7" path="res://assets/sound/pickup.ogg" id="3_m1rf4"]
+[ext_resource type="Texture2D" uid="uid://c7nw1t3a32uuj" path="res://assets/sprites/player_carry2.png" id="4_8x54s"]
+[ext_resource type="Texture2D" uid="uid://dpadur76s6705" path="res://assets/sprites/player_carry2_mirror.png" id="6_jl87j"]
+[ext_resource type="Texture2D" uid="uid://b7oykkbiv1ew1" path="res://assets/sprites/player_carry1_mirror.png" id="7_6mvxq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m1rf4"]
 animations = [{
@@ -25,21 +29,15 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_c3xjo")
+"duration": 2.0,
+"texture": ExtResource("3_a5ws5")
 }, {
-"duration": 1.0,
-"texture": ExtResource("2_c3xjo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_c3xjo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_c3xjo")
+"duration": 0.3,
+"texture": ExtResource("4_8x54s")
 }],
 "loop": true,
 "name": &"idle_carrying",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -59,17 +57,17 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_c3xjo")
+"duration": 0.7,
+"texture": ExtResource("3_a5ws5")
 }, {
-"duration": 1.0,
-"texture": ExtResource("3_8xfqm")
+"duration": 0.3,
+"texture": ExtResource("4_8x54s")
 }, {
-"duration": 1.0,
-"texture": ExtResource("2_c3xjo")
+"duration": 0.3,
+"texture": ExtResource("6_jl87j")
 }, {
-"duration": 1.0,
-"texture": ExtResource("3_8xfqm")
+"duration": 0.7,
+"texture": ExtResource("7_6mvxq")
 }],
 "loop": true,
 "name": &"walking_carrying",
@@ -86,8 +84,8 @@ metadata/_custom_type_script = "uid://dunq0vkcu5nhs"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m1rf4")
-animation = &"idle"
-frame_progress = 0.789899
+animation = &"walking_carrying"
+frame_progress = 0.0306237
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.75, -1)

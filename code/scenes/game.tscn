@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://c5phb5ggyd2kt"]
+[gd_scene load_steps=21 format=3 uid="uid://c5phb5ggyd2kt"]
 
 [ext_resource type="Script" uid="uid://bd8gnp1bedk86" path="res://code/scenes/game.gd" id="1_e67e6"]
 [ext_resource type="PackedScene" uid="uid://d360xf3bomed7" path="res://code/Environment/Room.tscn" id="2_i48lw"]
 [ext_resource type="PackedScene" uid="uid://bq03o58a1pc3" path="res://code/Characters/Player.tscn" id="3_pmdtt"]
 [ext_resource type="PackedScene" uid="uid://ighwgeo0gn3p" path="res://code/Environment/Camera.tscn" id="4_pf1ok"]
+[ext_resource type="Texture2D" uid="uid://c7iwuxg62amu4" path="res://assets/sprites/misc/rug.png" id="6_n1h8g"]
 [ext_resource type="Texture2D" uid="uid://dcob3cc0mqa7o" path="res://assets/image/flash_cone.png" id="6_s55pg"]
 [ext_resource type="PackedScene" uid="uid://dmxx1jkmbvkn4" path="res://code/Environment/MiscItems/FoodPot.tscn" id="7_2liwv"]
 [ext_resource type="PackedScene" uid="uid://cb3lka58w74iw" path="res://code/Environment/MiscItems/FlowerPot.tscn" id="8_8lhlm"]
@@ -25,8 +26,14 @@ y_sort_enabled = true
 script = ExtResource("1_e67e6")
 
 [node name="Room" parent="." instance=ExtResource("2_i48lw")]
-y_sort_enabled = true
 scale = Vector2(1.082, 0.901)
+
+[node name="RugNode" type="Node2D" parent="."]
+
+[node name="Rug" type="Sprite2D" parent="RugNode"]
+position = Vector2(692, 297)
+scale = Vector2(1.80069, 1.6875)
+texture = ExtResource("6_n1h8g")
 
 [node name="Player" parent="." instance=ExtResource("3_pmdtt")]
 position = Vector2(384, 223)

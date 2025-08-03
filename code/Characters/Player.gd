@@ -5,7 +5,6 @@ extends CharacterBody2D
 @export var turn_speed : float = 10
 @onready var sprite : AnimatedSprite2D = $Sprite2D
 
-var _lastMainAction := 0 #to avoid spamming actions
 var _pickedItem : Node2D = null
 
 func _ready():
@@ -27,7 +26,6 @@ func _process(_delta):
 	move_and_slide()
 		
 func try_drop_or_pick():
-	_lastMainAction = Time.get_ticks_msec()
 	if (_pickedItem != null):
 		drop()
 	
@@ -51,8 +49,7 @@ func pick_up(collider):
 				hasPickableItemAsChild = true
 	
 	if not isCat and not hasPickableItemAsChild:
-		#you can pick up any item that is not a cat or or do not have a PickableItem
-		print(isCat, hasPickableItemAsChild, collider)
+		#you can not pick up any item that is not a cat or do not have a PickableItem
 		return
 	
 	_pickedItem = collider
